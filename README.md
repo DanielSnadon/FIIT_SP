@@ -1,14 +1,16 @@
-<div align="center">
-Посетитель номер:
+<div align="center"><h1>ФА </br>Completed 0/10 </br>Accepted 0/10</h1></div>
 
-![Visitors](https://count.getloli.com/@empty-labs-2courseFiit?name=empty-labs-2courseFiit&theme=booru-qualityhentais&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
+<div align="center">
+Visitor count: 
+<br/>
+
+<img src="https://count.getloli.com/@sp-labs-snadon-2026?name=sp-labs-snadon-2026&theme=3d-num&padding=7&offset=0&align=top&scale=1.5&pixelated=1&darkmode=auto" alt="MyCounter:3" />
 
 </div>
 
-Для выполнения лабораторных, необходимо вести разработку с использованием github. Соответственно: делаете `fork` (кнопочка сверху), и у вас появляется личная копия репозитория, внутри которого вы и работаете. (Далее, как обычно, его клонируете и можете приступать к работе)
+![SillyCat](https://github.com/DanielSnadon/FIIT_FA/blob/main/RandomFIles/cat.jpeg)
 
-Да прибудет с вами сила.
+Чуть позже тут будет реклама.
 
 
-
-Здесь могла бы быть Ваша реклама =)
+2026 - [DanielSnadon](https://github.com/DanielSnadon)
