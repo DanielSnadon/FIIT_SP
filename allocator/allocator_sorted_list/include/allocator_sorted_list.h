@@ -5,6 +5,7 @@
 #include <allocator_test_utils.h>
 #include <allocator_with_fit_mode.h>
 #include <iterator>
+#include <cstring>
 #include <mutex>
 
 class allocator_sorted_list final:
@@ -121,6 +122,12 @@ private:
         sorted_iterator();
 
         sorted_iterator(void* trusted);
+
+        void setEnd(void* trusted, void* current) {
+            _trusted_memory = trusted;
+            _current_ptr = current;
+            _free_ptr = nullptr;
+        }
     };
 
     friend class sorted_iterator;
