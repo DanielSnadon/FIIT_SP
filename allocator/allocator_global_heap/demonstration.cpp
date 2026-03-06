@@ -36,3 +36,5 @@ int main() {
     return 0;
 }
 
+// Запускать из корня:
+// ./build/allocator/allocator_global_heap/demonstration

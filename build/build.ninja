@@ -197,8 +197,6 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o:
   INCLUDES = -I/home/snadon/FIIT_SP/build/_deps/googletest-src/googlemock/include -I/home/snadon/FIIT_SP/build/_deps/googletest-src/googlemock -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src
-  TARGET_COMPILE_PDB = lib/libgmockpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin/libgmockpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -213,9 +211,8 @@ build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-bu
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = lib/libgmockpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib/libgmock.a
-  TARGET_PDB = bin/libgmockpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gmock_main
@@ -232,8 +229,6 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main
   INCLUDES = -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googlemock/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googlemock -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src
-  TARGET_COMPILE_PDB = lib/libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin/libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -248,9 +243,8 @@ build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps/goo
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = lib/libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib/libgmock_main.a
-  TARGET_PDB = bin/libgmock_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gmock_main.a.dbg
 
 
 #############################################
@@ -338,8 +332,6 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o:
   INCLUDES = -I/home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -I/home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src
-  TARGET_COMPILE_PDB = lib/libgtestpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin/libgtestpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -354,9 +346,8 @@ build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-bu
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = lib/libgtestpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib/libgtest.a
-  TARGET_PDB = bin/libgtestpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target gtest_main
@@ -373,8 +364,6 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main
   INCLUDES = -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src
-  TARGET_COMPILE_PDB = lib/libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
-  TARGET_PDB = bin/libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
 
 
 # =============================================================================
@@ -389,9 +378,8 @@ build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps/goo
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = lib/libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
   TARGET_FILE = lib/libgtest_main.a
-  TARGET_PDB = bin/libgtest_mainpdb_debug_postfix-NOTFOUND.pdb
+  TARGET_PDB = gtest_main.a.dbg
 
 
 #############################################
@@ -550,8 +538,6 @@ build allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_te
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir
   OBJECT_FILE_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/sys_prog_allctr_allctr.pdb
-  TARGET_PDB = allocator/allocator/libsys_prog_allctr_allctr.pdb
 
 build allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o: CXX_COMPILER__sys_prog_allctr_allctr_unscanned_Debug /home/snadon/FIIT_SP/allocator/allocator/src/allocator_dbg_helper.cpp || cmake_object_order_depends_target_sys_prog_allctr_allctr
   DEP_FILE = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o.d
@@ -559,8 +545,6 @@ build allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_db
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir
   OBJECT_FILE_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/sys_prog_allctr_allctr.pdb
-  TARGET_PDB = allocator/allocator/libsys_prog_allctr_allctr.pdb
 
 build allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o: CXX_COMPILER__sys_prog_allctr_allctr_unscanned_Debug /home/snadon/FIIT_SP/allocator/allocator/src/pp_allocator.cpp || cmake_object_order_depends_target_sys_prog_allctr_allctr
   DEP_FILE = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o.d
@@ -568,8 +552,6 @@ build allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir
   OBJECT_FILE_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/sys_prog_allctr_allctr.pdb
-  TARGET_PDB = allocator/allocator/libsys_prog_allctr_allctr.pdb
 
 
 # =============================================================================
@@ -584,9 +566,8 @@ build allocator/allocator/libsys_prog_allctr_allctr.a: CXX_STATIC_LIBRARY_LINKER
   OBJECT_DIR = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/sys_prog_allctr_allctr.pdb
   TARGET_FILE = allocator/allocator/libsys_prog_allctr_allctr.a
-  TARGET_PDB = allocator/allocator/libsys_prog_allctr_allctr.pdb
+  TARGET_PDB = sys_prog_allctr_allctr.a.dbg
 
 
 #############################################
@@ -674,8 +655,6 @@ build allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_t
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_boundary_tags/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir
   OBJECT_FILE_DIR = allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/sys_prog_allctr_allctr_bndr_tgs.pdb
-  TARGET_PDB = allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.pdb
 
 
 # =============================================================================
@@ -690,9 +669,8 @@ build allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a: CX
   OBJECT_DIR = allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_boundary_tags/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/sys_prog_allctr_allctr_bndr_tgs.pdb
   TARGET_FILE = allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a
-  TARGET_PDB = allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_bndr_tgs.a.dbg
 
 
 #############################################
@@ -780,8 +758,6 @@ build allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_boundary_tags/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs_tests.dir
   OBJECT_FILE_DIR = allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs_tests.dir
-  TARGET_COMPILE_PDB = allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs_tests.dir/
-  TARGET_PDB = allocator/allocator_boundary_tags/tests/sys_prog_allctr_allctr_bndr_tgs_tests.pdb
 
 
 # =============================================================================
@@ -799,9 +775,8 @@ build allocator/allocator_boundary_tags/tests/sys_prog_allctr_allctr_bndr_tgs_te
   OBJECT_DIR = allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_boundary_tags/tests/CMakeFiles/sys_prog_allctr_allctr_bndr_tgs_tests.dir/
   TARGET_FILE = allocator/allocator_boundary_tags/tests/sys_prog_allctr_allctr_bndr_tgs_tests
-  TARGET_PDB = allocator/allocator_boundary_tags/tests/sys_prog_allctr_allctr_bndr_tgs_tests.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_bndr_tgs_tests.dbg
 
 
 #############################################
@@ -889,8 +864,6 @@ build allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_buddies_system/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir
   OBJECT_FILE_DIR = allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/sys_prog_allctr_allctr_bdds_sstm.pdb
-  TARGET_PDB = allocator/allocator_buddies_system/libsys_prog_allctr_allctr_bdds_sstm.pdb
 
 
 # =============================================================================
@@ -905,9 +878,8 @@ build allocator/allocator_buddies_system/libsys_prog_allctr_allctr_bdds_sstm.a: 
   OBJECT_DIR = allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/sys_prog_allctr_allctr_bdds_sstm.pdb
   TARGET_FILE = allocator/allocator_buddies_system/libsys_prog_allctr_allctr_bdds_sstm.a
-  TARGET_PDB = allocator/allocator_buddies_system/libsys_prog_allctr_allctr_bdds_sstm.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_bdds_sstm.a.dbg
 
 
 #############################################
@@ -995,8 +967,6 @@ build allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_buddies_system/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir
   OBJECT_FILE_DIR = allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir
-  TARGET_COMPILE_PDB = allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/
-  TARGET_PDB = allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_tests.pdb
 
 
 # =============================================================================
@@ -1014,9 +984,8 @@ build allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_
   OBJECT_DIR = allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_buddies_system/tests/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/
   TARGET_FILE = allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_tests
-  TARGET_PDB = allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_tests.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_bdds_sstm_tests.dbg
 
 
 #############################################
@@ -1104,8 +1073,6 @@ build allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_global_heap/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir
   OBJECT_FILE_DIR = allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/sys_prog_allctr_allctr_glbl_hp.pdb
-  TARGET_PDB = allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.pdb
 
 
 # =============================================================================
@@ -1120,9 +1087,43 @@ build allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a: CXX_S
   OBJECT_DIR = allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/sys_prog_allctr_allctr_glbl_hp.pdb
   TARGET_FILE = allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a
-  TARGET_PDB = allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_glbl_hp.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target demonstration
+
+
+#############################################
+# Order-only phony target for demonstration
+
+build cmake_object_order_depends_target_demonstration: phony || cmake_object_order_depends_target_sys_prog_allctr_allctr cmake_object_order_depends_target_sys_prog_allctr_allctr_glbl_hp cmake_object_order_depends_target_sys_prog_cmmn
+
+build allocator/allocator_global_heap/CMakeFiles/demonstration.dir/demonstration.cpp.o: CXX_COMPILER__demonstration_unscanned_Debug /home/snadon/FIIT_SP/allocator/allocator_global_heap/demonstration.cpp || cmake_object_order_depends_target_demonstration
+  DEP_FILE = allocator/allocator_global_heap/CMakeFiles/demonstration.dir/demonstration.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_global_heap/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
+  OBJECT_DIR = allocator/allocator_global_heap/CMakeFiles/demonstration.dir
+  OBJECT_FILE_DIR = allocator/allocator_global_heap/CMakeFiles/demonstration.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demonstration
+
+
+#############################################
+# Link the executable allocator/allocator_global_heap/demonstration
+
+build allocator/allocator_global_heap/demonstration: CXX_EXECUTABLE_LINKER__demonstration_Debug allocator/allocator_global_heap/CMakeFiles/demonstration.dir/demonstration.cpp.o | allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a common/libsys_prog_cmmn.a allocator/allocator/libsys_prog_allctr_allctr.a || allocator/allocator/libsys_prog_allctr_allctr.a allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a common/libsys_prog_cmmn.a
+  DEP_FILE = allocator/allocator_global_heap/CMakeFiles/demonstration.dir/link.d
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--dependency-file=allocator/allocator_global_heap/CMakeFiles/demonstration.dir/link.d
+  LINK_LIBRARIES = allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a  common/libsys_prog_cmmn.a  allocator/allocator/libsys_prog_allctr_allctr.a
+  OBJECT_DIR = allocator/allocator_global_heap/CMakeFiles/demonstration.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = allocator/allocator_global_heap/demonstration
+  TARGET_PDB = demonstration.dbg
 
 
 #############################################
@@ -1210,8 +1211,6 @@ build allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_gl
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_global_heap/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_glbl_hp_tests.dir
   OBJECT_FILE_DIR = allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_glbl_hp_tests.dir
-  TARGET_COMPILE_PDB = allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_glbl_hp_tests.dir/
-  TARGET_PDB = allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests.pdb
 
 
 # =============================================================================
@@ -1229,9 +1228,8 @@ build allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests
   OBJECT_DIR = allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_glbl_hp_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_global_heap/tests/CMakeFiles/sys_prog_allctr_allctr_glbl_hp_tests.dir/
   TARGET_FILE = allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests
-  TARGET_PDB = allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_glbl_hp_tests.dbg
 
 
 #############################################
@@ -1319,8 +1317,6 @@ build allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_red_black_tree/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir
   OBJECT_FILE_DIR = allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/sys_prog_allctr_allctr_rb_tr.pdb
-  TARGET_PDB = allocator/allocator_red_black_tree/libsys_prog_allctr_allctr_rb_tr.pdb
 
 
 # =============================================================================
@@ -1335,9 +1331,8 @@ build allocator/allocator_red_black_tree/libsys_prog_allctr_allctr_rb_tr.a: CXX_
   OBJECT_DIR = allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/sys_prog_allctr_allctr_rb_tr.pdb
   TARGET_FILE = allocator/allocator_red_black_tree/libsys_prog_allctr_allctr_rb_tr.a
-  TARGET_PDB = allocator/allocator_red_black_tree/libsys_prog_allctr_allctr_rb_tr.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_rb_tr.a.dbg
 
 
 #############################################
@@ -1425,8 +1420,6 @@ build allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_red_black_tree/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr_rb_tr_tests.dir
   OBJECT_FILE_DIR = allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr_rb_tr_tests.dir
-  TARGET_COMPILE_PDB = allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr_rb_tr_tests.dir/
-  TARGET_PDB = allocator/allocator_red_black_tree/tests/sys_prog_allctr_allctr_rb_tr_tests.pdb
 
 
 # =============================================================================
@@ -1444,9 +1437,8 @@ build allocator/allocator_red_black_tree/tests/sys_prog_allctr_allctr_rb_tr_test
   OBJECT_DIR = allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr_rb_tr_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_red_black_tree/tests/CMakeFiles/sys_prog_allctr_allctr_rb_tr_tests.dir/
   TARGET_FILE = allocator/allocator_red_black_tree/tests/sys_prog_allctr_allctr_rb_tr_tests
-  TARGET_PDB = allocator/allocator_red_black_tree/tests/sys_prog_allctr_allctr_rb_tr_tests.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_rb_tr_tests.dbg
 
 
 #############################################
@@ -1534,8 +1526,6 @@ build allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_sorted_list/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir
   OBJECT_FILE_DIR = allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/src
-  TARGET_COMPILE_PDB = allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/sys_prog_allctr_allctr_srtd_lst.pdb
-  TARGET_PDB = allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.pdb
 
 
 # =============================================================================
@@ -1550,9 +1540,8 @@ build allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a: CXX_
   OBJECT_DIR = allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_sorted_list/CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/sys_prog_allctr_allctr_srtd_lst.pdb
   TARGET_FILE = allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a
-  TARGET_PDB = allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_srtd_lst.a.dbg
 
 
 #############################################
@@ -1640,8 +1629,6 @@ build allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_sr
   INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_sorted_list/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir
   OBJECT_FILE_DIR = allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir
-  TARGET_COMPILE_PDB = allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/
-  TARGET_PDB = allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_tests.pdb
 
 
 # =============================================================================
@@ -1659,9 +1646,8 @@ build allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_test
   OBJECT_DIR = allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/
   TARGET_FILE = allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_tests
-  TARGET_PDB = allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_tests.pdb
+  TARGET_PDB = sys_prog_allctr_allctr_srtd_lst_tests.dbg
 
 
 #############################################
@@ -1749,8 +1735,6 @@ build associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir/src/hhh.cpp.o: 
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir
   OBJECT_FILE_DIR = associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir/src
-  TARGET_COMPILE_PDB = associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir/sys_prog_assctv_cntnr.pdb
-  TARGET_PDB = associative_container/libsys_prog_assctv_cntnr.pdb
 
 
 # =============================================================================
@@ -1765,9 +1749,8 @@ build associative_container/libsys_prog_assctv_cntnr.a: CXX_STATIC_LIBRARY_LINKE
   OBJECT_DIR = associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/CMakeFiles/sys_prog_assctv_cntnr.dir/sys_prog_assctv_cntnr.pdb
   TARGET_FILE = associative_container/libsys_prog_assctv_cntnr.a
-  TARGET_PDB = associative_container/libsys_prog_assctv_cntnr.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr.a.dbg
 
 
 #############################################
@@ -1926,8 +1909,6 @@ build associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.dir/src
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.pdb
-  TARGET_PDB = associative_container/indexing_tree/b_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_pls_tr.pdb
 
 
 # =============================================================================
@@ -1942,9 +1923,8 @@ build associative_container/indexing_tree/b_plus_tree/libsys_prog_assctv_cntnr_i
   OBJECT_DIR = associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.pdb
   TARGET_FILE = associative_container/indexing_tree/b_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_pls_tr.a
-  TARGET_PDB = associative_container/indexing_tree/b_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_pls_tr.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_pls_tr.a.dbg
 
 
 #############################################
@@ -2032,8 +2012,6 @@ build associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dir
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dir/
-  TARGET_PDB = associative_container/indexing_tree/b_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.pdb
 
 
 # =============================================================================
@@ -2051,9 +2029,8 @@ build associative_container/indexing_tree/b_plus_tree/tests/sys_prog_assctv_cntn
   OBJECT_DIR = associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dir/
   TARGET_FILE = associative_container/indexing_tree/b_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests
-  TARGET_PDB = associative_container/indexing_tree/b_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests.dbg
 
 
 #############################################
@@ -2141,8 +2118,6 @@ build associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_a
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.dir/src
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.pdb
-  TARGET_PDB = associative_container/indexing_tree/b_star_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.pdb
 
 
 # =============================================================================
@@ -2157,9 +2132,8 @@ build associative_container/indexing_tree/b_star_plus_tree/libsys_prog_assctv_cn
   OBJECT_DIR = associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.pdb
   TARGET_FILE = associative_container/indexing_tree/b_star_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.a
-  TARGET_PDB = associative_container/indexing_tree/b_star_plus_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr.a.dbg
 
 
 #############################################
@@ -2247,8 +2221,6 @@ build associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dir
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dir/
-  TARGET_PDB = associative_container/indexing_tree/b_star_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.pdb
 
 
 # =============================================================================
@@ -2266,9 +2238,8 @@ build associative_container/indexing_tree/b_star_plus_tree/tests/sys_prog_assctv
   OBJECT_DIR = associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_plus_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dir/
   TARGET_FILE = associative_container/indexing_tree/b_star_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests
-  TARGET_PDB = associative_container/indexing_tree/b_star_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_str_pls_tr_tests.dbg
 
 
 #############################################
@@ -2356,8 +2327,6 @@ build associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.dir/src
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.pdb
-  TARGET_PDB = associative_container/indexing_tree/b_star_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_tr.pdb
 
 
 # =============================================================================
@@ -2372,9 +2341,8 @@ build associative_container/indexing_tree/b_star_tree/libsys_prog_assctv_cntnr_i
   OBJECT_DIR = associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_str_tr.pdb
   TARGET_FILE = associative_container/indexing_tree/b_star_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_tr.a
-  TARGET_PDB = associative_container/indexing_tree/b_star_tree/libsys_prog_assctv_cntnr_indxng_tr_b_str_tr.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_str_tr.a.dbg
 
 
 #############################################
@@ -2462,8 +2430,6 @@ build associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/
-  TARGET_PDB = associative_container/indexing_tree/b_star_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.pdb
 
 
 # =============================================================================
@@ -2481,9 +2447,8 @@ build associative_container/indexing_tree/b_star_tree/tests/sys_prog_assctv_cntn
   OBJECT_DIR = associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_star_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/
   TARGET_FILE = associative_container/indexing_tree/b_star_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests
-  TARGET_PDB = associative_container/indexing_tree/b_star_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dbg
 
 
 #############################################
@@ -2571,8 +2536,6 @@ build associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntn
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
   OBJECT_DIR = associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr.dir/src
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_tr.pdb
-  TARGET_PDB = associative_container/indexing_tree/b_tree/libsys_prog_assctv_cntnr_indxng_tr_b_tr.pdb
 
 
 # =============================================================================
@@ -2587,9 +2550,8 @@ build associative_container/indexing_tree/b_tree/libsys_prog_assctv_cntnr_indxng
   OBJECT_DIR = associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr.dir/sys_prog_assctv_cntnr_indxng_tr_b_tr.pdb
   TARGET_FILE = associative_container/indexing_tree/b_tree/libsys_prog_assctv_cntnr_indxng_tr_b_tr.a
-  TARGET_PDB = associative_container/indexing_tree/b_tree/libsys_prog_assctv_cntnr_indxng_tr_b_tr.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_tr.a.dbg
 
 
 #############################################
@@ -2677,8 +2639,6 @@ build associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assct
   INCLUDES = -I/home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/./include -I/home/snadon/vcpkg/installed/x64-linux/include -I/home/snadon/FIIT_SP/associative_container/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest/include -isystem /home/snadon/FIIT_SP/build/_deps/googletest-src/googletest
   OBJECT_DIR = associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dir
   OBJECT_FILE_DIR = associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dir
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dir/
-  TARGET_PDB = associative_container/indexing_tree/b_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.pdb
 
 
 # =============================================================================
@@ -2696,9 +2656,8 @@ build associative_container/indexing_tree/b_tree/tests/sys_prog_assctv_cntnr_ind
   OBJECT_DIR = associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dir/
   TARGET_FILE = associative_container/indexing_tree/b_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests
-  TARGET_PDB = associative_container/indexing_tree/b_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.pdb
+  TARGET_PDB = sys_prog_assctv_cntnr_indxng_tr_b_tr_tests.dbg
 
 
 #############################################
@@ -2786,8 +2745,6 @@ build common/CMakeFiles/sys_prog_cmmn.dir/src/not_implemented.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/snadon/FIIT_SP/common/./include
   OBJECT_DIR = common/CMakeFiles/sys_prog_cmmn.dir
   OBJECT_FILE_DIR = common/CMakeFiles/sys_prog_cmmn.dir/src
-  TARGET_COMPILE_PDB = common/CMakeFiles/sys_prog_cmmn.dir/sys_prog_cmmn.pdb
-  TARGET_PDB = common/libsys_prog_cmmn.pdb
 
 
 # =============================================================================
@@ -2802,9 +2759,8 @@ build common/libsys_prog_cmmn.a: CXX_STATIC_LIBRARY_LINKER__sys_prog_cmmn_Debug 
   OBJECT_DIR = common/CMakeFiles/sys_prog_cmmn.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = common/CMakeFiles/sys_prog_cmmn.dir/sys_prog_cmmn.pdb
   TARGET_FILE = common/libsys_prog_cmmn.a
-  TARGET_PDB = common/libsys_prog_cmmn.pdb
+  TARGET_PDB = sys_prog_cmmn.a.dbg
 
 
 #############################################
@@ -2874,6 +2830,8 @@ build common/install/strip: phony common/CMakeFiles/install/strip.util
 
 # =============================================================================
 # Target aliases.
+
+build demonstration: phony allocator/allocator_global_heap/demonstration
 
 build gmock: phony lib/libgmock.a
 
@@ -3035,7 +2993,7 @@ build allocator/allocator_buddies_system/tests/all: phony allocator/allocator_bu
 #############################################
 # Folder: /home/snadon/FIIT_SP/build/allocator/allocator_global_heap
 
-build allocator/allocator_global_heap/all: phony allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a allocator/allocator_global_heap/tests/all
+build allocator/allocator_global_heap/all: phony allocator/allocator_global_heap/libsys_prog_allctr_allctr_glbl_hp.a allocator/allocator_global_heap/demonstration allocator/allocator_global_heap/tests/all
 
 # =============================================================================
 
@@ -3156,14 +3114,14 @@ build common/all: phony common/libsys_prog_cmmn.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/snadon/FIIT_SP/CMakeLists.txt /home/snadon/FIIT_SP/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/common/CMakeLists.txt /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfig.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfigVersion.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/vcpkg-cmake-wrapper.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-debug.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-release.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-targets.cmake /home/snadon/vcpkg/scripts/buildsystems/vcpkg.cmake /usr/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/share/cmake/Modules/CMakeCCompilerABI.c /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDependentOption.cmake /usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /usr/share/cmake/Modules/FetchContent.cmake /usr/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /usr/share/cmake/Modules/FindBoost.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPython.cmake /usr/share/cmake/Modules/FindPython/Support.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GNUInstallDirs.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake
+build build.ninja: RERUN_CMAKE | /home/snadon/FIIT_SP/CMakeLists.txt /home/snadon/FIIT_SP/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/common/CMakeLists.txt /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfig.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfigVersion.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/vcpkg-cmake-wrapper.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-debug.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-release.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-targets.cmake /home/snadon/vcpkg/scripts/buildsystems/vcpkg.cmake /usr/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeDependentOption.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /usr/share/cmake/Modules/FetchContent.cmake /usr/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /usr/share/cmake/Modules/FindBoost.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPython.cmake /usr/share/cmake/Modules/FindPython/Support.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GNUInstallDirs.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/snadon/FIIT_SP/CMakeLists.txt /home/snadon/FIIT_SP/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/common/CMakeLists.txt /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfig.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfigVersion.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/vcpkg-cmake-wrapper.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-debug.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-release.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-targets.cmake /home/snadon/vcpkg/scripts/buildsystems/vcpkg.cmake /usr/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake/Modules/CMakeCCompiler.cmake.in /usr/share/cmake/Modules/CMakeCCompilerABI.c /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXCompiler.cmake.in /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeCompilerIdDetection.cmake /usr/share/cmake/Modules/CMakeDependentOption.cmake /usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompiler.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake /usr/share/cmake/Modules/CMakeDetermineCompilerSupport.cmake /usr/share/cmake/Modules/CMakeDetermineSystem.cmake /usr/share/cmake/Modules/CMakeFindBinUtils.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeNinjaFindMake.cmake /usr/share/cmake/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /usr/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /usr/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /usr/share/cmake/Modules/CMakeSystem.cmake.in /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CMakeTestCCompiler.cmake /usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake /usr/share/cmake/Modules/CMakeTestCompilerCommon.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /usr/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/CrayClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /usr/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/OrangeC-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TIClang-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Tasking-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /usr/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /usr/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /usr/share/cmake/Modules/FetchContent.cmake /usr/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /usr/share/cmake/Modules/FindBoost.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPython.cmake /usr/share/cmake/Modules/FindPython/Support.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GNUInstallDirs.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Internal/FeatureTesting.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Determine-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
+build /home/snadon/FIIT_SP/CMakeLists.txt /home/snadon/FIIT_SP/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_buddies_system/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_global_heap/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_red_black_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/CMakeLists.txt /home/snadon/FIIT_SP/allocator/allocator_sorted_list/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_plus_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_star_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/CMakeLists.txt /home/snadon/FIIT_SP/associative_container/indexing_tree/b_tree/tests/CMakeLists.txt /home/snadon/FIIT_SP/common/CMakeLists.txt /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfig.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/BoostConfigVersion.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost/vcpkg-cmake-wrapper.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_assert/boost_assert-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_config/boost_config-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-debug.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets-release.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_container/boost_container-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_headers/boost_headers-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_intrusive/boost_intrusive-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_move/boost_move-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_mp11/boost_mp11-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_predef/boost_predef-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_system/boost_system-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_throw_exception/boost_throw_exception-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_variant2/boost_variant2-targets.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config-version.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-config.cmake /home/snadon/vcpkg/installed/x64-linux/share/boost_winapi/boost_winapi-targets.cmake /home/snadon/vcpkg/scripts/buildsystems/vcpkg.cmake /usr/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /usr/share/cmake/Modules/CMakeCInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeDependentOption.cmake /usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/CheckCSourceCompiles.cmake /usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake /usr/share/cmake/Modules/CheckIncludeFile.cmake /usr/share/cmake/Modules/CheckIncludeFileCXX.cmake /usr/share/cmake/Modules/CheckLibraryExists.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-C.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake /usr/share/cmake/Modules/FetchContent.cmake /usr/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /usr/share/cmake/Modules/FindBoost.cmake /usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake/Modules/FindPackageMessage.cmake /usr/share/cmake/Modules/FindPython.cmake /usr/share/cmake/Modules/FindPython/Support.cmake /usr/share/cmake/Modules/FindThreads.cmake /usr/share/cmake/Modules/GNUInstallDirs.cmake /usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /usr/share/cmake/Modules/Linker/GNU-C.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake /usr/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.31.6/CMakeCCompiler.cmake CMakeFiles/3.31.6/CMakeCXXCompiler.cmake CMakeFiles/3.31.6/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################
