@@ -3,6 +3,7 @@
 
 #include <allocator_dbg_helper.h>
 #include <pp_allocator.h>
+#include <mutex>
 
 class allocator_global_heap final:
     private allocator_dbg_helper,
@@ -41,6 +42,7 @@ private:
 
     bool do_is_equal(const std::pmr::memory_resource& other) const noexcept override;
 
+    mutable std::mutex mutex;
 };
 
 #endif //MATH_PRACTICE_AND_OPERATING_SYSTEMS_ALLOCATOR_ALLOCATOR_GLOBAL_HEAP_H
