@@ -1543,6 +1543,41 @@ build allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a: CXX_
   TARGET_FILE = allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a
   TARGET_PDB = sys_prog_allctr_allctr_srtd_lst.a.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target demonstration2
+
+
+#############################################
+# Order-only phony target for demonstration2
+
+build cmake_object_order_depends_target_demonstration2: phony || cmake_object_order_depends_target_sys_prog_allctr_allctr cmake_object_order_depends_target_sys_prog_allctr_allctr_srtd_lst cmake_object_order_depends_target_sys_prog_cmmn
+
+build allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir/demonstration2.cpp.o: CXX_COMPILER__demonstration2_unscanned_Debug /home/snadon/FIIT_SP/allocator/allocator_sorted_list/demonstration2.cpp || cmake_object_order_depends_target_demonstration2
+  DEP_FILE = allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir/demonstration2.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_sorted_list/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
+  OBJECT_DIR = allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir
+  OBJECT_FILE_DIR = allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demonstration2
+
+
+#############################################
+# Link the executable allocator/allocator_sorted_list/demonstration2
+
+build allocator/allocator_sorted_list/demonstration2: CXX_EXECUTABLE_LINKER__demonstration2_Debug allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir/demonstration2.cpp.o | allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a common/libsys_prog_cmmn.a allocator/allocator/libsys_prog_allctr_allctr.a || allocator/allocator/libsys_prog_allctr_allctr.a allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a common/libsys_prog_cmmn.a
+  DEP_FILE = allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir/link.d
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--dependency-file=allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir/link.d
+  LINK_LIBRARIES = allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a  common/libsys_prog_cmmn.a  allocator/allocator/libsys_prog_allctr_allctr.a
+  OBJECT_DIR = allocator/allocator_sorted_list/CMakeFiles/demonstration2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = allocator/allocator_sorted_list/demonstration2
+  TARGET_PDB = demonstration2.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -2833,6 +2868,8 @@ build common/install/strip: phony common/CMakeFiles/install/strip.util
 
 build demonstration: phony allocator/allocator_global_heap/demonstration
 
+build demonstration2: phony allocator/allocator_sorted_list/demonstration2
+
 build gmock: phony lib/libgmock.a
 
 build gmock_main: phony lib/libgmock_main.a
@@ -3021,7 +3058,7 @@ build allocator/allocator_red_black_tree/tests/all: phony allocator/allocator_re
 #############################################
 # Folder: /home/snadon/FIIT_SP/build/allocator/allocator_sorted_list
 
-build allocator/allocator_sorted_list/all: phony allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a allocator/allocator_sorted_list/tests/all
+build allocator/allocator_sorted_list/all: phony allocator/allocator_sorted_list/libsys_prog_allctr_allctr_srtd_lst.a allocator/allocator_sorted_list/demonstration2 allocator/allocator_sorted_list/tests/all
 
 # =============================================================================
 

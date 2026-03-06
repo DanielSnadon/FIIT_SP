@@ -17,3 +17,14 @@ target_link_libraries(
         sys_prog_allctr_allctr_srtd_lst
         PUBLIC
         sys_prog_allctr_allctr)
+
+add_executable(
+    demonstration2
+    demonstration2.cpp
+)
+
+target_link_libraries(
+    demonstration2
+    PRIVATE 
+    sys_prog_allctr_allctr_srtd_lst
+)  

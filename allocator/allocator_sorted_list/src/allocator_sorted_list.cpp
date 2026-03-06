@@ -1,6 +1,9 @@
 #include <not_implemented.h>
 #include "../include/allocator_sorted_list.h"
 
+// Тесты
+// ./build/allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_tests
+
 // Align.
 
 constexpr size_t alignUp(size_t value, size_t alignment) noexcept
@@ -59,7 +62,7 @@ T &accessField(void *base, size_t offset) {
 }
 
 template<typename T>
-T &accessField(const void *base, size_t offset) {
+const T &accessField(const void *base, size_t offset) {
     return *reinterpret_cast<const T*>(ptrToBytes(base) + offset);
 }
 
@@ -333,7 +336,7 @@ allocator_sorted_list::allocator_sorted_list(
 	
 	std::lock_guard<std::mutex> lock(accessMutex(_trusted_memory));
 	
-	size_t fixedSize = alignUp(size, defaultAlign);
+	size_t fixedSize = alignUp(size, alignof(void*));
 	
 	void *selectedBlock = nullptr;
 	void *selectedPrev = nullptr;
@@ -777,3 +780,6 @@ bool allocator_sorted_list::sorted_iterator::occupied() const noexcept
 	
 	return isKidOfAllocator(_current_ptr, _trusted_memory);
 }
+
+// Тесты
+// ./build/allocator/allocator_sorted_list/tests/sys_prog_allctr_allctr_srtd_lst_tests
