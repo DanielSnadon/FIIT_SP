@@ -8,6 +8,10 @@ allocator_global_heap::allocator_global_heap()
 [[nodiscard]] void *allocator_global_heap::do_allocate_sm(
     size_t size)
 {
+    if (size == 0) {
+        return nullptr;
+    }
+
     std::lock_guard<std::mutex> lock(mutex);
     
     return ::operator new(size);
@@ -35,6 +39,7 @@ allocator_global_heap::allocator_global_heap(const allocator_global_heap &other)
 
 allocator_global_heap &allocator_global_heap::operator=(const allocator_global_heap &other)
 {
+    return *this;
 }
 
 bool allocator_global_heap::do_is_equal(const std::pmr::memory_resource &other) const noexcept
@@ -48,4 +53,8 @@ allocator_global_heap::allocator_global_heap(allocator_global_heap &&other) noex
 
 allocator_global_heap &allocator_global_heap::operator=(allocator_global_heap &&other) noexcept
 {
+    return *this;
 }
+
+// Тесты запускаются из корня FIIT_SP/ с помощью:
+// ./build/allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests
