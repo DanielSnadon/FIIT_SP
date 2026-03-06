@@ -36,5 +36,6 @@ int main() {
     return 0;
 }
 
+// cmake --build build
 // Запускать из корня:
 // ./build/allocator/allocator_global_heap/demonstration

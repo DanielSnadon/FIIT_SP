@@ -1,6 +1,9 @@
 #include <not_implemented.h>
 #include "../include/allocator_global_heap.h"
 
+// Тесты запускаются из корня:
+// ./build/allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests
+
 allocator_global_heap::allocator_global_heap()
 {
 }
@@ -56,5 +59,5 @@ allocator_global_heap &allocator_global_heap::operator=(allocator_global_heap &&
     return *this;
 }
 
-// Тесты запускаются из корня FIIT_SP/ с помощью:
+// Тесты запускаются из корня:
 // ./build/allocator/allocator_global_heap/tests/sys_prog_allctr_allctr_glbl_hp_tests

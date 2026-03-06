@@ -33,5 +33,7 @@ int main()
     return 0;
 }
 
-// Запустить
+
+// cmake --build build
+// Запускать из корня:
 // ./build/allocator/allocator_sorted_list/demonstration2
