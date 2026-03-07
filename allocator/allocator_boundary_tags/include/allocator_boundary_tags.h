@@ -6,6 +6,7 @@
 #include <pp_allocator.h>
 #include <iterator>
 #include <mutex>
+#include <cstring>
 
 class allocator_boundary_tags final :
     public smart_mem_resource,
@@ -107,6 +108,26 @@ private:
         boundary_iterator();
 
         boundary_iterator(void* trusted);
+
+        void setter(void* trusted, void* occupiedPtr, bool occupied)
+        {
+            _trusted_memory = trusted;
+            _occupied_ptr = occupiedPtr;
+            _occupied = occupied;
+        }
+
+        void setTrusted(void* trusted)
+        {
+            _trusted_memory = trusted;
+        }
+
+        void setOcupiedPtr(void* occupiedPtr)
+        {
+            _occupied_ptr = occupiedPtr;
+        }
+        void setOccupied(bool occupied) {
+            _occupied = occupied;
+        }
     };
 
     friend class boundary_iterator;
