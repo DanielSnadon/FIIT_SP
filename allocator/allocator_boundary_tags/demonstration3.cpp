@@ -23,7 +23,7 @@ int main()
 
     std::cout << "int: " << *int_value << '\n';
     std::cout << "double: " << *double_value << '\n';
-    std::cout << "text: " << text << '\n';
+    std::cout << "texto: " << text << '\n';
 
     alloc.deallocate(int_value, sizeof(int), alignof(int));
     alloc.deallocate(double_value, sizeof(double), alignof(double));
