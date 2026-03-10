@@ -17,3 +17,14 @@ target_link_libraries(
         sys_prog_allctr_allctr_bndr_tgs
         PUBLIC
         sys_prog_allctr_allctr)
+
+add_executable(
+    demonstration3
+    demonstration3.cpp
+)
+
+target_link_libraries(
+    demonstration3
+    PRIVATE
+    sys_prog_allctr_allctr_bndr_tgs
+)

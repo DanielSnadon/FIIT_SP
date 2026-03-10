@@ -672,6 +672,41 @@ build allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a: CX
   TARGET_FILE = allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a
   TARGET_PDB = sys_prog_allctr_allctr_bndr_tgs.a.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target demonstration3
+
+
+#############################################
+# Order-only phony target for demonstration3
+
+build cmake_object_order_depends_target_demonstration3: phony || cmake_object_order_depends_target_sys_prog_allctr_allctr cmake_object_order_depends_target_sys_prog_allctr_allctr_bndr_tgs cmake_object_order_depends_target_sys_prog_cmmn
+
+build allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir/demonstration3.cpp.o: CXX_COMPILER__demonstration3_unscanned_Debug /home/snadon/FIIT_SP/allocator/allocator_boundary_tags/demonstration3.cpp || cmake_object_order_depends_target_demonstration3
+  DEP_FILE = allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir/demonstration3.cpp.o.d
+  FLAGS = -g -std=gnu++23
+  INCLUDES = -I/home/snadon/FIIT_SP/allocator/allocator_boundary_tags/./include -I/home/snadon/FIIT_SP/common/./include -I/home/snadon/FIIT_SP/allocator/allocator/./include
+  OBJECT_DIR = allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir
+  OBJECT_FILE_DIR = allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demonstration3
+
+
+#############################################
+# Link the executable allocator/allocator_boundary_tags/demonstration3
+
+build allocator/allocator_boundary_tags/demonstration3: CXX_EXECUTABLE_LINKER__demonstration3_Debug allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir/demonstration3.cpp.o | allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a common/libsys_prog_cmmn.a allocator/allocator/libsys_prog_allctr_allctr.a || allocator/allocator/libsys_prog_allctr_allctr.a allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a common/libsys_prog_cmmn.a
+  DEP_FILE = allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir/link.d
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--dependency-file=allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir/link.d
+  LINK_LIBRARIES = allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a  common/libsys_prog_cmmn.a  allocator/allocator/libsys_prog_allctr_allctr.a
+  OBJECT_DIR = allocator/allocator_boundary_tags/CMakeFiles/demonstration3.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = allocator/allocator_boundary_tags/demonstration3
+  TARGET_PDB = demonstration3.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -2870,6 +2905,8 @@ build demonstration: phony allocator/allocator_global_heap/demonstration
 
 build demonstration2: phony allocator/allocator_sorted_list/demonstration2
 
+build demonstration3: phony allocator/allocator_boundary_tags/demonstration3
+
 build gmock: phony lib/libgmock.a
 
 build gmock_main: phony lib/libgmock_main.a
@@ -3002,7 +3039,7 @@ build allocator/allocator/all: phony allocator/allocator/libsys_prog_allctr_allc
 #############################################
 # Folder: /home/snadon/FIIT_SP/build/allocator/allocator_boundary_tags
 
-build allocator/allocator_boundary_tags/all: phony allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a allocator/allocator_boundary_tags/tests/all
+build allocator/allocator_boundary_tags/all: phony allocator/allocator_boundary_tags/libsys_prog_allctr_allctr_bndr_tgs.a allocator/allocator_boundary_tags/demonstration3 allocator/allocator_boundary_tags/tests/all
 
 # =============================================================================
 
