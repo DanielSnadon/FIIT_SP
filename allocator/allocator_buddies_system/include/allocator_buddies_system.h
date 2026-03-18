@@ -6,6 +6,7 @@
 #include <allocator_with_fit_mode.h>
 #include <mutex>
 #include <cmath>
+#include <cstring>
 
 namespace __detail
 {
