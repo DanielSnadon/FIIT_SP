@@ -86,7 +86,7 @@ bool isPower2(size_t value) noexcept
     return value != 0 && (value & (value - 1)) == 0;
 }
 
-#pragma region accesses
+#pragma region Accesses
 
 // Конвертация указателя в байтовый
 
