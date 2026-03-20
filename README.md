@@ -1,4 +1,4 @@
-<div align="center"><h1>СП </br>Completed 4/10 </br>Accepted 3/10</h1></div>
+<div align="center"><h1>СП </br>Completed 5/10 </br>Accepted 3/10</h1></div>
 
 <div align="center">
 Visitor count: 
