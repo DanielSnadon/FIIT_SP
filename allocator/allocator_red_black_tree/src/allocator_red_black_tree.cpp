@@ -4,6 +4,9 @@
 #include <cstring>
 #include "../include/allocator_red_black_tree.h"
 
+// Allocate - O(log(n))
+// Deallocate - O(log(n))
+
 // Тесты запускаются из корня:
 // ./build/allocator/allocator_red_black_tree/tests/sys_prog_allctr_allctr_rb_tr_tests
 
@@ -91,6 +94,11 @@ size_t accessTotalSize(void* metaStart)
 allocator_red_black_tree::block_data& accessBlockData(void* block)
 {
 	return accessField<allocator_red_black_tree::block_data>(block, blockDataOffset);
+}
+
+void* &accessOwner(void* block)
+{
+    return accessField<void*>(block, occupiedParentOffset);
 }
 
 void* &accessPrevBlock(void* block)
@@ -716,6 +724,8 @@ bool allocator_red_black_tree::do_is_equal(const std::pmr::memory_resource &othe
     }
 
     accessBlockData(found).occupied = true;
+    accessOwner(found) = _trusted_memory;
+
     return ptrToBytes<void>(found, occupied_block_metadata_size);
 }
 
@@ -732,6 +742,15 @@ void allocator_red_black_tree::do_deallocate_sm(
 
     void* block = ptrToBytes<void>(at, -static_cast<ptrdiff_t>(occupied_block_metadata_size));
     
+    // Fixed here.
+    auto* begin = ptrToBytes<void>(_trusted_memory, allocator_metadata_size);
+    auto* end = ptrToBytes<void>(_trusted_memory, accessTotalSize(_trusted_memory));
+
+    if (block < begin || block >= end || !accessBlockData(block).occupied || accessOwner(block) != _trusted_memory)
+    {
+        throw std::invalid_argument("Ошибка: блок не принадлежит данному аллокатору или уже является свободным.");
+    }
+
     void* n = accessNextBlock(block);
     if (n && !accessBlockData(n).occupied)
     {

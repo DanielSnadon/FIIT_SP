@@ -17,3 +17,6 @@ target_link_libraries(
         sys_prog_allctr_allctr_rb_tr
         PUBLIC
         sys_prog_allctr_allctr)
+
+add_executable(red_black_demo demonstration5.cpp)
+target_link_libraries(red_black_demo PRIVATE sys_prog_allctr_allctr_rb_tr)

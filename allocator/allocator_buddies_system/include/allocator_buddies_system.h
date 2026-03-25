@@ -80,6 +80,8 @@ public:
 
     ~allocator_buddies_system() override;
 
+    std::vector<allocator_test_utils::block_info> get_blocks_info() const noexcept override;
+
 private:
     
     [[nodiscard]] void *do_allocate_sm(
@@ -92,9 +94,6 @@ private:
 
     inline void set_fit_mode(
         allocator_with_fit_mode::fit_mode mode) override;
-
-
-    std::vector<allocator_test_utils::block_info> get_blocks_info() const noexcept override;
 
 private:
 

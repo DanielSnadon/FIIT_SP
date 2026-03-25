@@ -51,6 +51,10 @@ public:
             std::pmr::memory_resource *parent_allocator = nullptr,
             allocator_with_fit_mode::fit_mode allocate_fit_mode = allocator_with_fit_mode::fit_mode::first_fit);
 
+    std::vector<allocator_test_utils::block_info> get_blocks_info() const override;
+
+    inline void set_fit_mode(allocator_with_fit_mode::fit_mode mode) override;
+
 private:
     
     [[nodiscard]] void *do_allocate_sm(
@@ -60,10 +64,6 @@ private:
         void *at) override;
 
     bool do_is_equal(const std::pmr::memory_resource&) const noexcept override;
-
-    std::vector<allocator_test_utils::block_info> get_blocks_info() const override;
-    
-    inline void set_fit_mode(allocator_with_fit_mode::fit_mode mode) override;
 
 private:
 

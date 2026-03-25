@@ -175,6 +175,44 @@ sys_prog_allctr_allctr_rb_tr/fast:
 	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/build
 .PHONY : sys_prog_allctr_allctr_rb_tr/fast
 
+# Convenience name for target.
+allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/rule:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/rule
+.PHONY : allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/rule
+
+# Convenience name for target.
+red_black_demo: allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/rule
+.PHONY : red_black_demo
+
+# fast build rule for target.
+red_black_demo/fast:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build
+.PHONY : red_black_demo/fast
+
+demonstration5.o: demonstration5.cpp.o
+.PHONY : demonstration5.o
+
+# target to build an object file
+demonstration5.cpp.o:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/demonstration5.cpp.o
+.PHONY : demonstration5.cpp.o
+
+demonstration5.i: demonstration5.cpp.i
+.PHONY : demonstration5.i
+
+# target to preprocess a source file
+demonstration5.cpp.i:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/demonstration5.cpp.i
+.PHONY : demonstration5.cpp.i
+
+demonstration5.s: demonstration5.cpp.s
+.PHONY : demonstration5.s
+
+# target to generate assembly for a file
+demonstration5.cpp.s:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/demonstration5.cpp.s
+.PHONY : demonstration5.cpp.s
+
 src/allocator_red_black_tree.o: src/allocator_red_black_tree.cpp.o
 .PHONY : src/allocator_red_black_tree.o
 
@@ -211,7 +249,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... red_black_demo"
 	@echo "... sys_prog_allctr_allctr_rb_tr"
+	@echo "... demonstration5.o"
+	@echo "... demonstration5.i"
+	@echo "... demonstration5.s"
 	@echo "... src/allocator_red_black_tree.o"
 	@echo "... src/allocator_red_black_tree.i"
 	@echo "... src/allocator_red_black_tree.s"

@@ -17,3 +17,6 @@ target_link_libraries(
         sys_prog_allctr_allctr_bdds_sstm
         PUBLIC
         sys_prog_allctr_allctr)
+
+add_executable(buddy_system_demo demonstration4.cpp)
+target_link_libraries(buddy_system_demo PRIVATE sys_prog_allctr_allctr_bdds_sstm)

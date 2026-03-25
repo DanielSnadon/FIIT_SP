@@ -175,6 +175,44 @@ sys_prog_allctr_allctr_bdds_sstm/fast:
 	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/build.make allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/build
 .PHONY : sys_prog_allctr_allctr_bdds_sstm/fast
 
+# Convenience name for target.
+allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/rule:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/rule
+.PHONY : allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/rule
+
+# Convenience name for target.
+buddy_system_demo: allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/rule
+.PHONY : buddy_system_demo
+
+# fast build rule for target.
+buddy_system_demo/fast:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build.make allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build
+.PHONY : buddy_system_demo/fast
+
+demonstration4.o: demonstration4.cpp.o
+.PHONY : demonstration4.o
+
+# target to build an object file
+demonstration4.cpp.o:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build.make allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/demonstration4.cpp.o
+.PHONY : demonstration4.cpp.o
+
+demonstration4.i: demonstration4.cpp.i
+.PHONY : demonstration4.i
+
+# target to preprocess a source file
+demonstration4.cpp.i:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build.make allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/demonstration4.cpp.i
+.PHONY : demonstration4.cpp.i
+
+demonstration4.s: demonstration4.cpp.s
+.PHONY : demonstration4.s
+
+# target to generate assembly for a file
+demonstration4.cpp.s:
+	cd /home/snadon/FIIT_SP/build && $(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build.make allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/demonstration4.cpp.s
+.PHONY : demonstration4.cpp.s
+
 src/allocator_buddies_system.o: src/allocator_buddies_system.cpp.o
 .PHONY : src/allocator_buddies_system.o
 
@@ -211,7 +249,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... buddy_system_demo"
 	@echo "... sys_prog_allctr_allctr_bdds_sstm"
+	@echo "... demonstration4.o"
+	@echo "... demonstration4.i"
+	@echo "... demonstration4.s"
 	@echo "... src/allocator_buddies_system.o"
 	@echo "... src/allocator_buddies_system.i"
 	@echo "... src/allocator_buddies_system.s"

@@ -279,6 +279,19 @@ sys_prog_allctr_allctr_bdds_sstm/fast:
 .PHONY : sys_prog_allctr_allctr_bdds_sstm/fast
 
 #=============================================================================
+# Target rules for targets named buddy_system_demo
+
+# Build rule for target.
+buddy_system_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 buddy_system_demo
+.PHONY : buddy_system_demo
+
+# fast build rule for target.
+buddy_system_demo/fast:
+	$(MAKE) $(MAKESILENT) -f allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build.make allocator/allocator_buddies_system/CMakeFiles/buddy_system_demo.dir/build
+.PHONY : buddy_system_demo/fast
+
+#=============================================================================
 # Target rules for targets named sys_prog_allctr_allctr_bdds_sstm_tests
 
 # Build rule for target.
@@ -342,6 +355,19 @@ sys_prog_allctr_allctr_rb_tr: cmake_check_build_system
 sys_prog_allctr_allctr_rb_tr/fast:
 	$(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/build
 .PHONY : sys_prog_allctr_allctr_rb_tr/fast
+
+#=============================================================================
+# Target rules for targets named red_black_demo
+
+# Build rule for target.
+red_black_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 red_black_demo
+.PHONY : red_black_demo
+
+# fast build rule for target.
+red_black_demo/fast:
+	$(MAKE) $(MAKESILENT) -f allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build.make allocator/allocator_red_black_tree/CMakeFiles/red_black_demo.dir/build
+.PHONY : red_black_demo/fast
 
 #=============================================================================
 # Target rules for targets named sys_prog_allctr_allctr_rb_tr_tests
@@ -537,6 +563,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... buddy_system_demo"
 	@echo "... demonstration"
 	@echo "... demonstration2"
 	@echo "... demonstration3"
@@ -544,6 +571,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... red_black_demo"
 	@echo "... sys_prog_allctr_allctr"
 	@echo "... sys_prog_allctr_allctr_bdds_sstm"
 	@echo "... sys_prog_allctr_allctr_bdds_sstm_tests"

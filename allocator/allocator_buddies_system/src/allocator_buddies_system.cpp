@@ -2,6 +2,9 @@
 #include <cstddef>
 #include "../include/allocator_buddies_system.h"
 
+// Allocate - O(n)
+// Deallocate - O(log(n))
+
 // Тесты запускаются из корня:
 // ./build/allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_tests
 
@@ -453,19 +456,6 @@ void *translatePtr(void *oldPtr, const void *oldMetaStart, void *newMetaStart) n
             (ptrToBytes(oldPtr) - ptrToBytes(oldMetaStart));
 }
 
-void *findOccupiedBlockByPtr(void *at, void *metaStart) noexcept
-{
-    for (void *current = accessFirstBlock(metaStart); current < accessEnd(metaStart); current = nextBlock(current))
-    {
-        if (isOccupied(current, metaStart) && accessBlockSpace(current) == at)
-        {
-            return current;
-        }
-    }
-
-    return nullptr;
-}
-
 #pragma endregion
 
 #pragma endregion
@@ -590,11 +580,14 @@ void allocator_buddies_system::do_deallocate_sm(void *at)
 
     std::lock_guard<std::mutex> lock(accessMutex(_trusted_memory));
 
-    void *block = findOccupiedBlockByPtr(at, _trusted_memory);
+    void *block = ptrToBytes(at) - blockMetaSize;
 
-    if (block == nullptr)
+    // Fixed here.
+    auto *begin = ptrToBytes(accessFirstBlock(_trusted_memory));
+    auto *end = ptrToBytes(accessEnd(_trusted_memory));
+    if (ptrToBytes(block) < begin || ptrToBytes(at) > end || !isOccupied(block, _trusted_memory))
     {
-        throw std::invalid_argument("Блок не принадлежит данному аллокатору.");
+        throw std::invalid_argument("Ошибка: блок не принадлежит данному аллокатору или уже является свободным.");
     }
 
     size_t currBlockSize = accessBlockSize(block);
