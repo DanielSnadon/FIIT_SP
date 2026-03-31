@@ -106,9 +106,11 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/boost/move/traits.hpp \
   /usr/include/boost/move/utility_core.hpp \
   /usr/include/boost/static_assert.hpp \
+  /usr/include/c++/13/algorithm \
   /usr/include/c++/13/backward/auto_ptr.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/align.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocated_ptr.h \
@@ -128,6 +130,7 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
   /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -156,6 +159,7 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
   /usr/include/c++/13/bits/range_access.h \
+  /usr/include/c++/13/bits/ranges_algo.h \
   /usr/include/c++/13/bits/ranges_algobase.h \
   /usr/include/c++/13/bits/ranges_base.h \
   /usr/include/c++/13/bits/ranges_cmp.h \
@@ -168,11 +172,13 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/c++/13/bits/shared_ptr_base.h \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
@@ -188,6 +194,7 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
@@ -230,8 +237,10 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
   /usr/include/c++/13/memory_resource \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
+  /usr/include/c++/13/optional \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
+  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/ratio \
@@ -392,8 +401,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
@@ -416,17 +423,17 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/c++/13/bits/std_abs.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
-/usr/include/c++/13/bits/shared_ptr.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
-/usr/include/c++/13/debug/assertions.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/13/bits/ranges_util.h:
 
@@ -450,6 +457,10 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/bits/charconv.h:
 
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/c++/13/bits/atomic_wait.h:
@@ -468,11 +479,17 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
+/usr/include/c++/13/debug/debug.h:
+
 /usr/include/boost/move/detail/placement_new.hpp:
 
 /usr/include/boost/move/detail/type_traits.hpp:
 
 /usr/include/c++/13/ctime:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/boost/move/detail/move_helpers.hpp:
 
 /usr/include/c++/13/bits/functexcept.h:
 
@@ -483,8 +500,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /usr/include/boost/container/container_fwd.hpp:
 
@@ -525,6 +540,12 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/c++/13/bits/ostream_insert.h:
 
 /usr/include/pthread.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
 /usr/include/boost/move/algo/detail/set_difference.hpp:
 
@@ -604,9 +625,17 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/boost/container/detail/config_end.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/include/boost/container/throw_exception.hpp:
 
 /home/snadon/FIIT_SP/common/include/not_implemented.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/boost/config/detail/cxx_composite.hpp:
 
 /usr/include/c++/13/bits/memory_resource.h:
 
@@ -636,6 +665,8 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/boost/container/detail/algorithm.hpp:
 
+/usr/include/c++/13/bits/enable_special_members.h:
+
 /usr/include/boost/config/detail/select_platform_config.hpp:
 
 /usr/include/c++/13/bits/ostream.tcc:
@@ -660,8 +691,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/bits/ios_base.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
 /usr/include/boost/move/detail/config_end.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
@@ -678,8 +707,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/boost/move/algo/detail/merge_sort.hpp:
 
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
 /usr/include/c++/13/bits/char_traits.h:
 
 /usr/include/c++/13/bits/move.h:
@@ -695,8 +722,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/boost/intrusive/detail/workaround.hpp:
 
 /usr/include/boost/intrusive/detail/config_end.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
 
@@ -756,13 +781,13 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/boost/move/detail/std_ns_end.hpp:
 
-/usr/include/c++/13/tuple:
-
 /usr/include/boost/move/algo/unique.hpp:
 
 /usr/include/boost/intrusive/detail/reverse_iterator.hpp:
 
 /usr/include/boost/move/detail/to_raw_pointer.hpp:
+
+/usr/include/c++/13/algorithm:
 
 /usr/include/x86_64-linux-gnu/bits/syscall.h:
 
@@ -804,6 +829,28 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/boost/move/algo/detail/merge.hpp:
 
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/c++/13/debug/assertions.h:
+
+/usr/include/c++/13/bits/ranges_algo.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
 /usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
@@ -832,12 +879,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/bits/stl_stack.h:
 
-/usr/include/c++/13/bits/stl_tempbuf.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
 /usr/include/c++/13/bits/stl_uninitialized.h:
 
 /usr/include/c++/13/bits/align.h:
@@ -855,6 +896,8 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/c++/13/bits/ranges_cmp.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/boost/container/detail/advanced_insert_int.hpp:
 
@@ -890,17 +933,11 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/concepts:
 
-/usr/include/boost/config/detail/cxx_composite.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
 
 /usr/include/c++/13/cstdio:
 
 /usr/include/c++/13/cwchar:
-
-/usr/include/c++/13/debug/debug.h:
 
 /usr/include/c++/13/bits/chrono.h:
 
@@ -909,8 +946,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/unistd.h:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/boost/move/adl_move_swap.hpp:
 
@@ -932,6 +967,8 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
+/usr/include/c++/13/bits/stl_heap.h:
+
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/c++/13/exception:
@@ -946,11 +983,17 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/c++/13/memory:
 
+/usr/include/c++/13/optional:
+
+/usr/include/wchar.h:
+
 /usr/include/c++/13/pstl/execution_defs.h:
 
-/usr/include/c++/13/pstl/glue_memory_defs.h:
+/usr/include/c++/13/tuple:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/13/pstl/glue_memory_defs.h:
 
 /usr/include/c++/13/pstl/pstl_config.h:
 
@@ -1006,8 +1049,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/strings.h:
 
-/usr/include/wchar.h:
-
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
@@ -1044,10 +1085,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
 /usr/include/boost/detail/workaround.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
@@ -1065,8 +1102,6 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
@@ -1101,11 +1136,3 @@ associative_container/indexing_tree/b_tree/CMakeFiles/sys_prog_assctv_cntnr_indx
 /usr/include/c++/13/new:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/boost/move/detail/move_helpers.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:

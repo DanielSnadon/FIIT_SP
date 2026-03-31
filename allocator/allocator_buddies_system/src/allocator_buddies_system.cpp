@@ -3,7 +3,7 @@
 #include "../include/allocator_buddies_system.h"
 
 // Allocate - O(n)
-// Deallocate - O(log(n))
+// Deallocate - O(n)
 
 // Тесты запускаются из корня:
 // ./build/allocator/allocator_buddies_system/tests/sys_prog_allctr_allctr_bdds_sstm_tests

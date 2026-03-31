@@ -132,6 +132,7 @@ associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntn
  /usr/include/boost/move/traits.hpp
  /usr/include/boost/move/utility_core.hpp
  /usr/include/boost/static_assert.hpp
+ /usr/include/c++/13/algorithm
  /usr/include/c++/13/any
  /usr/include/c++/13/array
  /usr/include/c++/13/atomic
@@ -202,6 +203,7 @@ associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntn
  /usr/include/c++/13/bits/random.h
  /usr/include/c++/13/bits/random.tcc
  /usr/include/c++/13/bits/range_access.h
+ /usr/include/c++/13/bits/ranges_algo.h
  /usr/include/c++/13/bits/ranges_algobase.h
  /usr/include/c++/13/bits/ranges_base.h
  /usr/include/c++/13/bits/ranges_cmp.h
@@ -307,6 +309,7 @@ associative_container/indexing_tree/b_tree/tests/CMakeFiles/sys_prog_assctv_cntn
  /usr/include/c++/13/optional
  /usr/include/c++/13/ostream
  /usr/include/c++/13/pstl/execution_defs.h
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h
  /usr/include/c++/13/pstl/glue_memory_defs.h
  /usr/include/c++/13/pstl/glue_numeric_defs.h
  /usr/include/c++/13/pstl/pstl_config.h
