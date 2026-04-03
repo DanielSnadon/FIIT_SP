@@ -29,3 +29,6 @@ target_link_directories(
         PUBLIC
         ${Boost_LIBRARY_DIR}
 )
+
+add_executable(b_tree_demo demo.cpp)
+target_link_libraries(b_tree_demo PRIVATE sys_prog_assctv_cntnr_indxng_tr_b_tr)
