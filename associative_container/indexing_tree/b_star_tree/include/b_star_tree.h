@@ -870,9 +870,9 @@ void BS_tree<tkey, tvalue, compare, t>::twoThree(bstree_node* parent, size_t lef
     std::vector<bstree_node*> combinedPointers;
     collectTwoChildren(left, parent->_keys[left_index], middle, combinedKeys, combinedPointers);
 
-    const size_t payload = combinedKeys.size() - 2;
-    const size_t base = payload / 3;
-    const size_t remainder = payload % 3;
+    const size_t realSize = combinedKeys.size() - 2;
+    const size_t base = realSize / 3;
+    const size_t remainder = realSize % 3;
 
     const size_t firstCount = base;
     const size_t secondCount = base + (remainder == 2 ? 1 : 0);
