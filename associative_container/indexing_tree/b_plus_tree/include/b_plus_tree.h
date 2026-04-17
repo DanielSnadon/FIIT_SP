@@ -94,16 +94,33 @@ private:
     const tkey& firstKeyInSubtree(const bptree_node_base* node) const;
     void rebuildSeparators(bptree_node_base* node);
 
-    struct split_result
+    struct splitResult
     {
         bool happened;
         tkey separator;
         bptree_node_base* rightNode;
     };
 
-    std::pair<bptree_node_term*, size_t> insertIntoSubtree(bptree_node_base* node, const tree_data_type& data, bool& inserted, split_result& splitResult);
+    std::pair<bptree_node_term*, size_t> insertIntoSubtree(bptree_node_base* node, const tree_data_type& data, bool& inserted, splitResult& splitRes);
 
-    std::vector<tree_data_type> collectAllData() const;
+    void rebuildOneSeparator(bptree_node_middle* node);
+
+    struct eraseResult
+    {
+        bool removed;
+        bool notEnough;
+    };
+
+    eraseResult eraseFromSubtree(bptree_node_base*& node, const tkey& key);
+    void fixChildUnderflow(bptree_node_middle* parent, size_t childIndex);
+
+    void borrowFromLeftLeaf(bptree_node_middle* parent, size_t childIndex);
+    void borrowFromRightLeaf(bptree_node_middle* parent, size_t childIndex);
+    void mergeLeafChildren(bptree_node_middle* parent, size_t leftIndex);
+
+    void borrowFromLeftMiddle(bptree_node_middle* parent, size_t childIndex);
+    void borrowFromRightMiddle(bptree_node_middle* parent, size_t childIndex);
+    void mergeMiddleChildren(bptree_node_middle* parent, size_t leftIndex);
 
 public:
 
@@ -426,7 +443,6 @@ typename BP_tree<tkey, tvalue, compare, t>::bptree_node_base* BP_tree<tkey, tval
         return nullptr;
     }
 
-    // Случай 1 - копируется лист
     if (isTerminateNode(node))
     {
         const bptree_node_term* sourceLeaf = asTermNode(node);
@@ -442,7 +458,6 @@ typename BP_tree<tkey, tvalue, compare, t>::bptree_node_base* BP_tree<tkey, tval
         return clonedLeaf;
     }
 
-    // Случай 2 - копируем внутренний узел
     const bptree_node_middle* sourceMiddle = asMiddleNode(node);
     bptree_node_middle* clonedMiddle = makeMiddleNode();
 
@@ -539,7 +554,7 @@ const tkey& BP_tree<tkey, tvalue, compare, t>::firstKeyInSubtree(const bptree_no
     return firstKeyInSubtree(asMiddleNode(node)->_pointers.front());
 }
 
-// Пересборка разделителей
+// Пересборка всех сепараторов
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 void BP_tree<tkey, tvalue, compare, t>::rebuildSeparators(bptree_node_base* node)
 {
@@ -563,9 +578,9 @@ void BP_tree<tkey, tvalue, compare, t>::rebuildSeparators(bptree_node_base* node
     }
 }
 
-// Рекурсивное добавление узла с перебалансировкой
+// [!] Рекурсивное добавление узла
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
-std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t> BP_tree<tkey, tvalue, compare, t>::insertIntoSubtree(bptree_node_base* node, const tree_data_type& data, bool& inserted, split_result& splitResult)
+std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t> BP_tree<tkey, tvalue, compare, t>::insertIntoSubtree(bptree_node_base* node, const tree_data_type& data, bool& inserted, splitResult& splitRes)
 {
     // Case A - мы в листе
     if (isTerminateNode(node))
@@ -576,7 +591,7 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
         if (insertIndex < termNode->_data.size() && keysEqual(termNode->_data[insertIndex].first, data.first))
         { // Case A1 - такой ключ уже есть
             inserted = false;
-            splitResult = { false, tkey(), nullptr };
+            splitRes = { false, tkey(), nullptr };
             return { termNode, insertIndex };
         }
 
@@ -585,7 +600,7 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
 
         if (termNode->_data.size() <= maximum_keys_in_node)
         { // Case A2 - переполнения нет
-            splitResult = { false, tkey(), nullptr };
+            splitRes = { false, tkey(), nullptr };
             return { termNode, insertIndex };
         }
 
@@ -605,7 +620,7 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
         rightNode->_next = termNode->_next;
         termNode->_next = rightNode;
 
-        splitResult = { true, rightNode->_data.front().first, rightNode };
+        splitRes = { true, rightNode->_data.front().first, rightNode };
 
         if (insertIndex < termNode->_data.size())
         {
@@ -619,19 +634,19 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
     bptree_node_middle* middleNode = asMiddleNode(node);
     const size_t childIndex = childIndexInMiddleNode(middleNode, data.first);
 
-    split_result childSplit = { false, tkey(), nullptr };
+    splitResult childSplit = { false, tkey(), nullptr };
     std::pair<bptree_node_term*, size_t> iteratorState = insertIntoSubtree(middleNode->_pointers[childIndex], data, inserted, childSplit);
 
     // Case B1 - вставка не удалась или дочерний узел в пределах нормального размера
     if (!inserted)
     {
-        splitResult = { false, tkey(), nullptr };
+        splitRes = { false, tkey(), nullptr };
         return iteratorState;
     }
 
     if (!childSplit.happened)
     {
-        splitResult = { false, tkey(), nullptr };
+        splitRes = { false, tkey(), nullptr };
         return iteratorState;
     }
 
@@ -641,7 +656,7 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
 
     if (middleNode->_keys.size() <= maximum_keys_in_node)
     { // Case B2.1 - переполнения у родителя нет
-        splitResult = { false, tkey(), nullptr };
+        splitRes = { false, tkey(), nullptr };
         return iteratorState;
     }
 
@@ -663,28 +678,254 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
     middleNode->_keys.erase(middleNode->_keys.begin() + static_cast<std::ptrdiff_t>(promoteIndex), middleNode->_keys.end());
     middleNode->_pointers.erase(middleNode->_pointers.begin() + static_cast<std::ptrdiff_t>(promoteIndex + 1), middleNode->_pointers.end());
 
-    splitResult = { true, promotedKey, rightNode };
+    splitRes = { true, promotedKey, rightNode };
     return iteratorState;
 }
 
-// Сбор всех ключ-значение в один вектор
-template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
-std::vector<typename BP_tree<tkey, tvalue, compare, t>::tree_data_type> BP_tree<tkey, tvalue, compare, t>::collectAllData() const
-{
-    std::vector<tree_data_type> allData;
-    allData.reserve(_size);
+// NEW функции для удаления:
 
-    const bptree_node_term* currentNode = leftmostLeaf(_root);
-    while (currentNode != nullptr)
+// Перестройка сепаратора только у одного узла
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::rebuildOneSeparator(bptree_node_middle* node)
+{
+    if (node == nullptr)
     {
-        for (const tree_data_type& item : currentNode->_data)
-        {
-            allData.push_back(item);
-        }
-        currentNode = currentNode->_next;
+        return;
     }
 
-    return allData;
+    node->_keys.clear();
+
+    for (size_t index = 1; index < node->_pointers.size(); ++index)
+    {
+        node->_keys.push_back(firstKeyInSubtree(node->_pointers[index]));
+    }
+}
+
+// Занять у левого листа
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::borrowFromLeftLeaf(bptree_node_middle* parent, size_t childIndex)
+{
+    bptree_node_term* leftLeaf = asTermNode(parent->_pointers[childIndex - 1]);
+    bptree_node_term* childLeaf = asTermNode(parent->_pointers[childIndex]);
+
+    childLeaf->_data.insert(childLeaf->_data.begin(), std::move(leftLeaf->_data.back()));
+    leftLeaf->_data.pop_back();
+
+    rebuildOneSeparator(parent);
+}
+
+// Занять у правого листа
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::borrowFromRightLeaf(bptree_node_middle* parent, size_t childIndex)
+{
+    bptree_node_term* childLeaf = asTermNode(parent->_pointers[childIndex]);
+    bptree_node_term* rightLeaf = asTermNode(parent->_pointers[childIndex + 1]);
+
+    childLeaf->_data.push_back(std::move(rightLeaf->_data.front()));
+    rightLeaf->_data.erase(rightLeaf->_data.begin());
+
+    rebuildOneSeparator(parent);
+}
+
+// Слияние двух соседних листьев
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::mergeLeafChildren(bptree_node_middle* parent, size_t leftIndex)
+{
+    bptree_node_term* leftLeaf = asTermNode(parent->_pointers[leftIndex]);
+    bptree_node_term* rightLeaf = asTermNode(parent->_pointers[leftIndex + 1]);
+
+    for (tree_data_type& item : rightLeaf->_data)
+    {
+        leftLeaf->_data.push_back(std::move(item));
+    }
+
+    leftLeaf->_next = rightLeaf->_next;
+
+    delete rightLeaf;
+    parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 1));
+
+    rebuildOneSeparator(parent);
+}
+
+// Занять у левого внутр. узла
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::borrowFromLeftMiddle(bptree_node_middle* parent, size_t childIndex)
+{
+    bptree_node_middle* leftMiddle = asMiddleNode(parent->_pointers[childIndex - 1]);
+    bptree_node_middle* childMiddle = asMiddleNode(parent->_pointers[childIndex]);
+
+    childMiddle->_pointers.insert(childMiddle->_pointers.begin(), leftMiddle->_pointers.back());
+    leftMiddle->_pointers.pop_back();
+
+    rebuildOneSeparator(leftMiddle);
+    rebuildOneSeparator(childMiddle);
+    rebuildOneSeparator(parent);
+}
+
+// Занять у правого внутр. узла
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::borrowFromRightMiddle(bptree_node_middle* parent, size_t childIndex)
+{
+    bptree_node_middle* childMiddle = asMiddleNode(parent->_pointers[childIndex]);
+    bptree_node_middle* rightMiddle = asMiddleNode(parent->_pointers[childIndex + 1]);
+
+    childMiddle->_pointers.push_back(rightMiddle->_pointers.front());
+    rightMiddle->_pointers.erase(rightMiddle->_pointers.begin());
+
+    rebuildOneSeparator(childMiddle);
+    rebuildOneSeparator(rightMiddle);
+    rebuildOneSeparator(parent);
+}
+
+// Слить два внутренних узла
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::mergeMiddleChildren(bptree_node_middle* parent, size_t leftIndex)
+{
+    bptree_node_middle* leftMiddle = asMiddleNode(parent->_pointers[leftIndex]);
+    bptree_node_middle* rightMiddle = asMiddleNode(parent->_pointers[leftIndex + 1]);
+
+    for (bptree_node_base* child : rightMiddle->_pointers)
+    {
+        leftMiddle->_pointers.push_back(child);
+    }
+
+    delete rightMiddle;
+    parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 1));
+
+    rebuildOneSeparator(leftMiddle);
+    rebuildOneSeparator(parent);
+}
+
+// Когда ребёнок стал меньше минимума
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+void BP_tree<tkey, tvalue, compare, t>::fixChildUnderflow(bptree_node_middle* parent, size_t childIndex)
+{
+    bptree_node_base* child = parent->_pointers[childIndex];
+
+    // Случай A - лист
+    if (isTerminateNode(child))
+    {
+        // Случай A1 - заём у братьев
+        if (childIndex > 0)
+        {
+            bptree_node_term* leftLeaf = asTermNode(parent->_pointers[childIndex - 1]);
+            if (leftLeaf->_data.size() > minimum_keys_in_node)
+            {
+                borrowFromLeftLeaf(parent, childIndex);
+                return;
+            }
+        }
+
+        if (childIndex + 1 < parent->_pointers.size())
+        {
+            bptree_node_term* rightLeaf = asTermNode(parent->_pointers[childIndex + 1]);
+            if (rightLeaf->_data.size() > minimum_keys_in_node)
+            {
+                borrowFromRightLeaf(parent, childIndex);
+                return;
+            }
+        }
+
+        // Случай A2 - заём невозможен, мерджимся с кем-нибудь
+        if (childIndex > 0)
+        {
+            mergeLeafChildren(parent, childIndex - 1);
+        }
+        else
+        {
+            mergeLeafChildren(parent, childIndex);
+        }
+
+        return;
+    }
+
+    // Случай B - внутренний узел
+    
+    // Случай B1 - заём у братьев
+    if (childIndex > 0)
+    {
+        bptree_node_middle* leftMiddle = asMiddleNode(parent->_pointers[childIndex - 1]);
+        if (leftMiddle->_keys.size() > minimum_keys_in_node)
+        {
+            borrowFromLeftMiddle(parent, childIndex);
+            return;
+        }
+    }
+
+    if (childIndex + 1 < parent->_pointers.size())
+    {
+        bptree_node_middle* rightMiddle = asMiddleNode(parent->_pointers[childIndex + 1]);
+        if (rightMiddle->_keys.size() > minimum_keys_in_node)
+        {
+            borrowFromRightMiddle(parent, childIndex);
+            return;
+        }
+    }
+
+    // Случай B2 - заём невозможен, мерджимся с кем-нибудь
+    if (childIndex > 0)
+    {
+        mergeMiddleChildren(parent, childIndex - 1);
+    }
+    else
+    {
+        mergeMiddleChildren(parent, childIndex);
+    }
+}
+
+// [!] Рекурсивное удаление узла
+template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
+typename BP_tree<tkey, tvalue, compare, t>::eraseResult
+BP_tree<tkey, tvalue, compare, t>::eraseFromSubtree(bptree_node_base*& node, const tkey& key)
+{
+    if (node == nullptr)
+    {
+        return { false, false };
+    }
+
+    // Случай A - лист
+    if (isTerminateNode(node))
+    {
+        bptree_node_term* termNode = asTermNode(node);
+        size_t eraseIndex = lowerIndexInTermNode(termNode, key);
+
+        // Случай A1 - лист не нашли, ничего не удалили
+        if (eraseIndex >= termNode->_data.size() ||
+            !keysEqual(termNode->_data[eraseIndex].first, key))
+        {
+            return { false, false };
+        }
+
+        termNode->_data.erase(termNode->_data.begin() + static_cast<std::ptrdiff_t>(eraseIndex));
+
+        // Случай A2 - удаление успешно
+        return { true, termNode->_data.size() < minimum_keys_in_node };
+    }
+
+    // Случай B - внутренний узел
+
+    bptree_node_middle* middleNode = asMiddleNode(node);
+    size_t childIndex = childIndexInMiddleNode(middleNode, key);
+
+    eraseResult childResult = eraseFromSubtree(middleNode->_pointers[childIndex], key);
+
+    // Случай B1 - ничего не удалилось, передаю выше
+    if (!childResult.removed)
+    {
+        return { false, false };
+    }
+
+    // Случай B2 - ребёнок слишком мелкий
+    if (childResult.notEnough)
+    {
+        fixChildUnderflow(middleNode, childIndex);
+    }
+
+    // Случай B3 - всё окей, идём выше
+
+    rebuildOneSeparator(middleNode);
+
+    return { true, middleNode->_keys.size() < minimum_keys_in_node };
 }
 
 #pragma endregion
@@ -1214,8 +1455,8 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator, bool> BP_
     }
     
     bool inserted = false;
-    split_result splitResult = { false, tkey(), nullptr };
-    std::pair<bptree_node_term*, size_t> iteratorState = insertIntoSubtree(_root, data, inserted, splitResult);
+    splitResult splitRes = { false, tkey(), nullptr };
+    std::pair<bptree_node_term*, size_t> iteratorState = insertIntoSubtree(_root, data, inserted, splitRes);
     
     // Случай 2 - ключ уже был
     if (!inserted)
@@ -1225,12 +1466,12 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator, bool> BP_
 
     // Случай 3 - произошло разделение
     
-    if (splitResult.happened)
+    if (splitRes.happened)
     {
         bptree_node_middle* newRoot = makeMiddleNode();
         newRoot->_pointers.push_back(_root);
-        newRoot->_keys.push_back(splitResult.separator);
-        newRoot->_pointers.push_back(splitResult.rightNode);
+        newRoot->_keys.push_back(splitRes.separator);
+        newRoot->_pointers.push_back(splitRes.rightNode);
         _root = newRoot;
     }
 
@@ -1286,27 +1527,7 @@ typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator BP_tree<tkey, tvalue
         return end();
     }
 
-    std::optional<tkey> nextKey;
-    bptree_iterator nextPos = pos;
-    ++nextPos;
-    if (nextPos != end())
-    {
-        nextKey = nextPos->first;
-    }
-
-    const tkey removedKey = pos->first;
-    std::vector<tree_data_type> allData = collectAllData();
-    clear();
-
-    for (tree_data_type& item : allData)
-    {
-        if (!keysEqual(item.first, removedKey))
-        {
-            emplace(std::move(item.first), std::move(item.second));
-        }
-    }
-
-    return nextKey.has_value() ? lower_bound(*nextKey) : end();
+    return erase(pos->first);
 }
 
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
@@ -1324,31 +1545,28 @@ BP_tree<tkey, tvalue, compare, t>::erase(bptree_iterator beg, bptree_iterator en
         return en;
     }
 
-    const tkey firstRemovedKey = beg->first;
     std::optional<tkey> stopKey;
     if (en != end())
     {
         stopKey = en->first;
     }
 
-    std::vector<tree_data_type> allData = collectAllData();
-    clear();
-
-    for (tree_data_type& item : allData)
+    if (!stopKey.has_value())
     {
-        const bool afterLeft = !compare_keys(item.first, firstRemovedKey);
-
-        const bool beforeRight = !stopKey.has_value() || compare_keys(item.first, *stopKey);
-
-        if (afterLeft && beforeRight)
+        while (beg != end())
         {
-            continue;
+            beg = erase(beg);
         }
 
-        emplace(std::move(item.first), std::move(item.second));
+        return end();
     }
 
-    return stopKey.has_value() ? lower_bound(*stopKey) : end();
+    while (beg != end() && compare_keys(beg->first, *stopKey))
+    {
+        beg = erase(beg);
+    }
+
+    return lower_bound(*stopKey);
 }
 
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
@@ -1357,11 +1575,67 @@ typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator BP_tree<tkey, tvalue
     return erase(bptree_iterator(const_cast<bptree_node_term*>(beg._node), beg._index), bptree_iterator(const_cast<bptree_node_term*>(en._node), en._index));
 }
 
+// Главный erase этот
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator BP_tree<tkey, tvalue, compare, t>::erase(const tkey& key)
 {
     bptree_iterator it = find(key);
-    return it == end() ? end() : erase(it);
+    if (it == end())
+    {
+        return end();
+    }
+
+    std::optional<tkey> nextKey;
+    bptree_iterator nextIt = it;
+    ++nextIt;
+    if (nextIt != end())
+    {
+        nextKey = nextIt->first;
+    }
+
+    eraseResult result = eraseFromSubtree(_root, key);
+    if (!result.removed)
+    {
+        return end();
+    }
+
+    --_size;
+
+    // Отдельная обработка корня
+
+    if (_root != nullptr && isTerminateNode(_root))
+    {
+        bptree_node_term* rootLeaf = asTermNode(_root);
+        if (rootLeaf->_data.empty())
+        {
+            delete rootLeaf;
+            _root = nullptr;
+        }
+    }
+    
+    else if (_root != nullptr)
+    {
+        bptree_node_middle* rootMiddle = asMiddleNode(_root);
+
+        rebuildOneSeparator(rootMiddle);
+
+        if (rootMiddle->_keys.empty() && rootMiddle->_pointers.size() == 1)
+        {
+            bptree_node_base* newRoot = rootMiddle->_pointers.front();
+            rootMiddle->_pointers.clear();
+            delete rootMiddle;
+
+            _root = newRoot;
+        }
+
+        else if (rootMiddle->_pointers.empty())
+        {
+            delete rootMiddle;
+            _root = nullptr;
+        }
+    }
+
+    return nextKey.has_value() ? lower_bound(*nextKey) : end();
 }
 
 #pragma endregion

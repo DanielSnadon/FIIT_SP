@@ -129,6 +129,7 @@ associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_
  /usr/include/c++/13/bits/cxxabi_forced.h
  /usr/include/c++/13/bits/cxxabi_init_exception.h
  /usr/include/c++/13/bits/deque.tcc
+ /usr/include/c++/13/bits/enable_special_members.h
  /usr/include/c++/13/bits/exception.h
  /usr/include/c++/13/bits/exception_defines.h
  /usr/include/c++/13/bits/exception_ptr.h
@@ -231,6 +232,7 @@ associative_container/indexing_tree/b_star_plus_tree/CMakeFiles/sys_prog_assctv_
  /usr/include/c++/13/memory_resource
  /usr/include/c++/13/new
  /usr/include/c++/13/numbers
+ /usr/include/c++/13/optional
  /usr/include/c++/13/ostream
  /usr/include/c++/13/pstl/execution_defs.h
  /usr/include/c++/13/pstl/glue_memory_defs.h
