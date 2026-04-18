@@ -1286,7 +1286,7 @@ typename BSP_tree<tkey, tvalue, compare, t>::erase_result BSP_tree<tkey, tvalue,
     }
 
     rebuildOneSeparator(middleNode);
-    
+
     return { true, nodeUnderflowed(middleNode) };
 }
 
@@ -1898,17 +1898,26 @@ template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t
 typename BSP_tree<tkey, tvalue, compare, t>::bsptree_iterator BSP_tree<tkey, tvalue, compare, t>::erase(const tkey& key)
 {
     auto it = find(key);
-    if (it == end()) return end();
+    if (it == end())
+    {
+        return end();
+    }
 
     std::optional<tkey> nextKey;
     auto nextIt = it;
     ++nextIt;
-    if (nextIt != end()) nextKey = nextIt->first;
+    if (nextIt != end())
+    {
+        nextKey = nextIt->first;
+    }
 
     erase_result result = eraseFromSubtree(_root, key);
-    if (!result.removed) return end();
+    if (!result.removed)
+    {
+        return end();
+    }
     --_size;
-
+    // Корень = опустевший лист
     if (_root != nullptr && isTerminateNode(_root))
     {
         bsptree_node_term* rootLeaf = asTermNode(_root);
@@ -1929,6 +1938,7 @@ typename BSP_tree<tkey, tvalue, compare, t>::bsptree_iterator BSP_tree<tkey, tva
             delete rootMiddle;
             _root = newRoot;
         }
+        // Just in case
         else if (rootMiddle->_pointers.empty())
         {
             delete rootMiddle;
