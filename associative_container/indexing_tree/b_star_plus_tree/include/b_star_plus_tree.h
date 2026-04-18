@@ -626,16 +626,28 @@ void BSP_tree<tkey, tvalue, compare, t>::giveToOtherLeafs(bsptree_node_middle* p
 
     std::vector<tree_data_type> combined;
     combined.reserve(leftLeaf->_data.size() + rightLeaf->_data.size());
-    for (const tree_data_type& item : leftLeaf->_data) combined.push_back(item);
-    for (const tree_data_type& item : rightLeaf->_data) combined.push_back(item);
+    for (const tree_data_type& item : leftLeaf->_data)
+    {
+        combined.push_back(item);
+    }
+    for (const tree_data_type& item : rightLeaf->_data)
+    {
+        combined.push_back(item);
+    }
 
     const size_t leftCount = combined.size() / 2;
     const size_t rightCount = combined.size() - leftCount;
 
     leftLeaf->_data.clear();
     rightLeaf->_data.clear();
-    for (size_t i = 0; i < leftCount; ++i) leftLeaf->_data.push_back(std::move(combined[i]));
-    for (size_t i = 0; i < rightCount; ++i) rightLeaf->_data.push_back(std::move(combined[leftCount + i]));
+    for (size_t i = 0; i < leftCount; ++i)
+    {
+        leftLeaf->_data.push_back(std::move(combined[i]));
+    }
+    for (size_t i = 0; i < rightCount; ++i)
+    {
+        rightLeaf->_data.push_back(std::move(combined[leftCount + i]));
+    }
 
     rebuildOneSeparator(parent);
 }
@@ -650,8 +662,14 @@ void BSP_tree<tkey, tvalue, compare, t>::twoThreeLeafs(bsptree_node_middle* pare
 
     std::vector<tree_data_type> combined;
     combined.reserve(leftLeaf->_data.size() + middleLeaf->_data.size());
-    for (const tree_data_type& item : leftLeaf->_data) combined.push_back(item);
-    for (const tree_data_type& item : middleLeaf->_data) combined.push_back(item);
+    for (const tree_data_type& item : leftLeaf->_data)
+    {
+        combined.push_back(item);
+    }
+    for (const tree_data_type& item : middleLeaf->_data)
+    {
+        combined.push_back(item);
+    }
 
     const size_t firstCount = combined.size() / 3;
     const size_t secondCount = (combined.size() - firstCount) / 2;
@@ -660,9 +678,18 @@ void BSP_tree<tkey, tvalue, compare, t>::twoThreeLeafs(bsptree_node_middle* pare
     leftLeaf->_data.clear();
     middleLeaf->_data.clear();
     rightLeaf->_data.clear();
-    for (size_t i = 0; i < firstCount; ++i) leftLeaf->_data.push_back(std::move(combined[i]));
-    for (size_t i = 0; i < secondCount; ++i) middleLeaf->_data.push_back(std::move(combined[firstCount + i]));
-    for (size_t i = 0; i < thirdCount; ++i) rightLeaf->_data.push_back(std::move(combined[firstCount + secondCount + i]));
+    for (size_t i = 0; i < firstCount; ++i)
+    {
+        leftLeaf->_data.push_back(std::move(combined[i]));
+    }
+    for (size_t i = 0; i < secondCount; ++i)
+    {
+        middleLeaf->_data.push_back(std::move(combined[firstCount + i]));
+    }
+    for (size_t i = 0; i < thirdCount; ++i)
+    {
+        rightLeaf->_data.push_back(std::move(combined[firstCount + secondCount + i]));
+    }
 
     rightLeaf->_next = middleLeaf->_next;
     middleLeaf->_next = rightLeaf;
@@ -680,16 +707,28 @@ void BSP_tree<tkey, tvalue, compare, t>::giveToOtherMiddle(bsptree_node_middle* 
 
     std::vector<bsptree_node_base*> combined;
     combined.reserve(leftMiddle->_pointers.size() + rightMiddle->_pointers.size());
-    for (bsptree_node_base* child : leftMiddle->_pointers) combined.push_back(child);
-    for (bsptree_node_base* child : rightMiddle->_pointers) combined.push_back(child);
+    for (bsptree_node_base* child : leftMiddle->_pointers)
+    {
+        combined.push_back(child);
+    }
+    for (bsptree_node_base* child : rightMiddle->_pointers)
+    {
+        combined.push_back(child);
+    }
 
     const size_t leftPointerCount = combined.size() / 2;
     const size_t rightPointerCount = combined.size() - leftPointerCount;
 
     leftMiddle->_pointers.clear();
     rightMiddle->_pointers.clear();
-    for (size_t i = 0; i < leftPointerCount; ++i) leftMiddle->_pointers.push_back(combined[i]);
-    for (size_t i = 0; i < rightPointerCount; ++i) rightMiddle->_pointers.push_back(combined[leftPointerCount + i]);
+    for (size_t i = 0; i < leftPointerCount; ++i)
+    {
+        leftMiddle->_pointers.push_back(combined[i]);
+    }
+    for (size_t i = 0; i < rightPointerCount; ++i)
+    {
+        rightMiddle->_pointers.push_back(combined[leftPointerCount + i]);
+    }
 
     rebuildOneSeparator(leftMiddle);
     rebuildOneSeparator(rightMiddle);
@@ -706,8 +745,14 @@ void BSP_tree<tkey, tvalue, compare, t>::twoThreeMiddle(bsptree_node_middle* par
 
     std::vector<bsptree_node_base*> combined;
     combined.reserve(leftMiddle->_pointers.size() + middleMiddle->_pointers.size());
-    for (bsptree_node_base* child : leftMiddle->_pointers) combined.push_back(child);
-    for (bsptree_node_base* child : middleMiddle->_pointers) combined.push_back(child);
+    for (bsptree_node_base* child : leftMiddle->_pointers)
+    {
+        combined.push_back(child);
+    }
+    for (bsptree_node_base* child : middleMiddle->_pointers)
+    {
+        combined.push_back(child);
+    }
 
     const size_t firstPointerCount = combined.size() / 3;
     const size_t secondPointerCount = (combined.size() - firstPointerCount) / 2;
@@ -716,9 +761,18 @@ void BSP_tree<tkey, tvalue, compare, t>::twoThreeMiddle(bsptree_node_middle* par
     leftMiddle->_pointers.clear();
     middleMiddle->_pointers.clear();
     rightMiddle->_pointers.clear();
-    for (size_t i = 0; i < firstPointerCount; ++i) leftMiddle->_pointers.push_back(combined[i]);
-    for (size_t i = 0; i < secondPointerCount; ++i) middleMiddle->_pointers.push_back(combined[firstPointerCount + i]);
-    for (size_t i = 0; i < thirdPointerCount; ++i) rightMiddle->_pointers.push_back(combined[firstPointerCount + secondPointerCount + i]);
+    for (size_t i = 0; i < firstPointerCount; ++i)
+    {
+        leftMiddle->_pointers.push_back(combined[i]);
+    }
+    for (size_t i = 0; i < secondPointerCount; ++i)
+    {
+        middleMiddle->_pointers.push_back(combined[firstPointerCount + i]);
+    }
+    for (size_t i = 0; i < thirdPointerCount; ++i)
+    {
+        rightMiddle->_pointers.push_back(combined[firstPointerCount + secondPointerCount + i]);
+    }
 
     parent->_pointers.insert(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 2), rightMiddle);
     rebuildOneSeparator(leftMiddle);
@@ -743,13 +797,15 @@ void BSP_tree<tkey, tvalue, compare, t>::fixChildOverflow(bsptree_node_middle* p
         bsptree_node_base* child = parent->_pointers[childIndex];
         if (isTerminateNode(leftSibling) == isTerminateNode(child))
         {
-            bool canUseLeft = isTerminateNode(leftSibling)
-                ? asTermNode(leftSibling)->_data.size() < maximum_non_root_keys_in_node
-                : asMiddleNode(leftSibling)->_keys.size() < maximum_non_root_keys_in_node;
+            bool canUseLeft = isTerminateNode(leftSibling) ? asTermNode(leftSibling)->_data.size() < maximum_non_root_keys_in_node : asMiddleNode(leftSibling)->_keys.size() < maximum_non_root_keys_in_node;
             if (canUseLeft)
             {
-                if (isTerminateNode(child)) giveToOtherLeafs(parent, childIndex - 1);
-                else giveToOtherMiddle(parent, childIndex - 1);
+                if (isTerminateNode(child))
+                {
+                    giveToOtherLeafs(parent, childIndex - 1);
+                } else {
+                    giveToOtherMiddle(parent, childIndex - 1);
+                }
                 return;
             }
         }
@@ -762,13 +818,15 @@ void BSP_tree<tkey, tvalue, compare, t>::fixChildOverflow(bsptree_node_middle* p
         bsptree_node_base* child = parent->_pointers[childIndex];
         if (isTerminateNode(rightSibling) == isTerminateNode(child))
         {
-            bool canUseRight = isTerminateNode(rightSibling)
-                ? asTermNode(rightSibling)->_data.size() < maximum_non_root_keys_in_node
-                : asMiddleNode(rightSibling)->_keys.size() < maximum_non_root_keys_in_node;
+            bool canUseRight = isTerminateNode(rightSibling) ? asTermNode(rightSibling)->_data.size() < maximum_non_root_keys_in_node : asMiddleNode(rightSibling)->_keys.size() < maximum_non_root_keys_in_node;
             if (canUseRight)
             {
-                if (isTerminateNode(child)) giveToOtherLeafs(parent, childIndex);
-                else giveToOtherMiddle(parent, childIndex);
+                if (isTerminateNode(child))
+                {
+                    giveToOtherLeafs(parent, childIndex);
+                } else {
+                    giveToOtherMiddle(parent, childIndex);
+                }
                 return;
             }
         }
@@ -777,8 +835,12 @@ void BSP_tree<tkey, tvalue, compare, t>::fixChildOverflow(bsptree_node_middle* p
     // Случай 3 - split
     if (childIndex > 0)
     {
-        if (isTerminateNode(parent->_pointers[childIndex])) twoThreeLeafs(parent, childIndex - 1);
-        else twoThreeMiddle(parent, childIndex - 1);
+        if (isTerminateNode(parent->_pointers[childIndex]))
+        {
+            twoThreeLeafs(parent, childIndex - 1);
+        } else {
+            twoThreeMiddle(parent, childIndex - 1);
+        }
     }
     else
     {
@@ -792,8 +854,10 @@ template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t
 std::pair<typename BSP_tree<tkey, tvalue, compare, t>::bsptree_node_term*, size_t>
 BSP_tree<tkey, tvalue, compare, t>::insertIntoSubtree(bsptree_node_base* node, const tree_data_type& data, bool& inserted, split_result& splitResult)
 {
+    // Случай А - лист
     if (isTerminateNode(node))
     {
+        // Случай А1 - ключ уже существует
         bsptree_node_term* termNode = asTermNode(node);
         size_t insertIndex = lowerIndexInTermNode(termNode, data.first);
         if (insertIndex < termNode->_data.size() && keysEqual(termNode->_data[insertIndex].first, data.first))
@@ -803,24 +867,27 @@ BSP_tree<tkey, tvalue, compare, t>::insertIntoSubtree(bsptree_node_base* node, c
             return { termNode, insertIndex };
         }
 
+        // Случай А2 - успешная вставка
         termNode->_data.insert(termNode->_data.begin() + static_cast<std::ptrdiff_t>(insertIndex), data);
         inserted = true;
         splitResult = { false, tkey(), nullptr };
         return { termNode, insertIndex };
     }
 
+    // Случай B - внутренний узел
     bsptree_node_middle* middleNode = asMiddleNode(node);
     size_t childIndex = childIndexInMiddleNode(middleNode, data.first);
 
     split_result childSplit = { false, tkey(), nullptr };
     auto iteratorState = insertIntoSubtree(middleNode->_pointers[childIndex], data, inserted, childSplit);
-
+    // Случай B1 - вставка не удалась
     if (!inserted)
     {
         splitResult = { false, tkey(), nullptr };
         return iteratorState;
     }
 
+    // Случай B2 - переполнение
     if (nodeOverflowed(middleNode->_pointers[childIndex]))
     {
         fixChildOverflow(middleNode, childIndex);
@@ -891,8 +958,10 @@ void BSP_tree<tkey, tvalue, compare, t>::borrowFromLeftLeaf(bsptree_node_middle*
 {
     bsptree_node_term* leftLeaf = asTermNode(parent->_pointers[childIndex - 1]);
     bsptree_node_term* childLeaf = asTermNode(parent->_pointers[childIndex]);
+
     childLeaf->_data.insert(childLeaf->_data.begin(), std::move(leftLeaf->_data.back()));
     leftLeaf->_data.pop_back();
+
     rebuildOneSeparator(parent);
 }
 
@@ -902,8 +971,10 @@ void BSP_tree<tkey, tvalue, compare, t>::borrowFromRightLeaf(bsptree_node_middle
 {
     bsptree_node_term* childLeaf = asTermNode(parent->_pointers[childIndex]);
     bsptree_node_term* rightLeaf = asTermNode(parent->_pointers[childIndex + 1]);
+
     childLeaf->_data.push_back(std::move(rightLeaf->_data.front()));
     rightLeaf->_data.erase(rightLeaf->_data.begin());
+
     rebuildOneSeparator(parent);
 }
 
@@ -917,34 +988,55 @@ void BSP_tree<tkey, tvalue, compare, t>::ThreeTwoLeafs(bsptree_node_middle* pare
 
     std::vector<tree_data_type> combined;
     combined.reserve(first->_data.size() + second->_data.size() + third->_data.size());
-    for (const tree_data_type& item : first->_data) combined.push_back(item);
-    for (const tree_data_type& item : second->_data) combined.push_back(item);
-    for (const tree_data_type& item : third->_data) combined.push_back(item);
+    for (const tree_data_type& item : first->_data)
+    {
+        combined.push_back(item);
+    }
+    for (const tree_data_type& item : second->_data)
+    {
+        combined.push_back(item);
+    }
+    for (const tree_data_type& item : third->_data)
+    {
+        combined.push_back(item);
+    }
 
     const size_t firstCount = combined.size() / 2;
     const size_t secondCount = combined.size() - firstCount;
 
     first->_data.clear();
     second->_data.clear();
-    for (size_t i = 0; i < firstCount; ++i) first->_data.push_back(std::move(combined[i]));
-    for (size_t i = 0; i < secondCount; ++i) second->_data.push_back(std::move(combined[firstCount + i]));
+    for (size_t i = 0; i < firstCount; ++i)
+    {
+        first->_data.push_back(std::move(combined[i]));
+    }
+    for (size_t i = 0; i < secondCount; ++i)
+    {
+        second->_data.push_back(std::move(combined[firstCount + i]));
+    }
 
     second->_next = third->_next;
     delete third;
     parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 2));
+
     rebuildOneSeparator(parent);
 }
 
-/// {Листья} слияние двух узлов в один (special для корня)
+/// {Листья} слияние двух узлов в один (обычно для корня)
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 void BSP_tree<tkey, tvalue, compare, t>::TwoOneLeafs(bsptree_node_middle* parent, size_t leftIndex)
 {
     bsptree_node_term* leftLeaf = asTermNode(parent->_pointers[leftIndex]);
     bsptree_node_term* rightLeaf = asTermNode(parent->_pointers[leftIndex + 1]);
-    for (tree_data_type& item : rightLeaf->_data) leftLeaf->_data.push_back(std::move(item));
+    for (tree_data_type& item : rightLeaf->_data)
+    {
+        leftLeaf->_data.push_back(std::move(item));
+    }
+
     leftLeaf->_next = rightLeaf->_next;
     delete rightLeaf;
     parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 1));
+
     rebuildOneSeparator(parent);
 }
 
@@ -954,8 +1046,10 @@ void BSP_tree<tkey, tvalue, compare, t>::borrowFromLeftMiddle(bsptree_node_middl
 {
     bsptree_node_middle* leftMiddle = asMiddleNode(parent->_pointers[childIndex - 1]);
     bsptree_node_middle* childMiddle = asMiddleNode(parent->_pointers[childIndex]);
+
     childMiddle->_pointers.insert(childMiddle->_pointers.begin(), leftMiddle->_pointers.back());
     leftMiddle->_pointers.pop_back();
+
     rebuildOneSeparator(leftMiddle);
     rebuildOneSeparator(childMiddle);
     rebuildOneSeparator(parent);
@@ -967,8 +1061,10 @@ void BSP_tree<tkey, tvalue, compare, t>::borrowFromRightMiddle(bsptree_node_midd
 {
     bsptree_node_middle* childMiddle = asMiddleNode(parent->_pointers[childIndex]);
     bsptree_node_middle* rightMiddle = asMiddleNode(parent->_pointers[childIndex + 1]);
+
     childMiddle->_pointers.push_back(rightMiddle->_pointers.front());
     rightMiddle->_pointers.erase(rightMiddle->_pointers.begin());
+
     rebuildOneSeparator(childMiddle);
     rebuildOneSeparator(rightMiddle);
     rebuildOneSeparator(parent);
@@ -984,17 +1080,32 @@ void BSP_tree<tkey, tvalue, compare, t>::ThreeTwoMiddle(bsptree_node_middle* par
 
     std::vector<bsptree_node_base*> combined;
     combined.reserve(first->_pointers.size() + second->_pointers.size() + third->_pointers.size());
-    for (bsptree_node_base* child : first->_pointers) combined.push_back(child);
-    for (bsptree_node_base* child : second->_pointers) combined.push_back(child);
-    for (bsptree_node_base* child : third->_pointers) combined.push_back(child);
+    for (bsptree_node_base* child : first->_pointers)
+    {
+        combined.push_back(child);
+    }
+    for (bsptree_node_base* child : second->_pointers)
+    {
+        combined.push_back(child);
+    }
+    for (bsptree_node_base* child : third->_pointers)
+    {
+        combined.push_back(child);
+    }
 
     const size_t firstCount = combined.size() / 2;
     const size_t secondCount = combined.size() - firstCount;
 
     first->_pointers.clear();
     second->_pointers.clear();
-    for (size_t i = 0; i < firstCount; ++i) first->_pointers.push_back(combined[i]);
-    for (size_t i = 0; i < secondCount; ++i) second->_pointers.push_back(combined[firstCount + i]);
+    for (size_t i = 0; i < firstCount; ++i)
+    {
+        first->_pointers.push_back(combined[i]);
+    }
+    for (size_t i = 0; i < secondCount; ++i)
+    {
+        second->_pointers.push_back(combined[firstCount + i]);
+    }
 
     delete third;
     parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 2));
@@ -1003,15 +1114,20 @@ void BSP_tree<tkey, tvalue, compare, t>::ThreeTwoMiddle(bsptree_node_middle* par
     rebuildOneSeparator(parent);
 }
 
-/// {Узлы} слияние двух узлов в один (special для корня)
+/// {Узлы} слияние двух узлов в один (обычно для корня)
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 void BSP_tree<tkey, tvalue, compare, t>::TwoOneMiddle(bsptree_node_middle* parent, size_t leftIndex)
 {
     bsptree_node_middle* leftMiddle = asMiddleNode(parent->_pointers[leftIndex]);
     bsptree_node_middle* rightMiddle = asMiddleNode(parent->_pointers[leftIndex + 1]);
-    for (bsptree_node_base* child : rightMiddle->_pointers) leftMiddle->_pointers.push_back(child);
+
+    for (bsptree_node_base* child : rightMiddle->_pointers)
+    {
+        leftMiddle->_pointers.push_back(child);
+    }
     delete rightMiddle;
     parent->_pointers.erase(parent->_pointers.begin() + static_cast<std::ptrdiff_t>(leftIndex + 1));
+    
     rebuildOneSeparator(leftMiddle);
     rebuildOneSeparator(parent);
 }
@@ -1134,26 +1250,32 @@ void BSP_tree<tkey, tvalue, compare, t>::fixChildUnderflow(bsptree_node_middle* 
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 typename BSP_tree<tkey, tvalue, compare, t>::erase_result BSP_tree<tkey, tvalue, compare, t>::eraseFromSubtree(bsptree_node_base*& node, const tkey& key)
 {
+    // Случай 1 - пустое
     if (node == nullptr)
     {
         return { false, false };
     }
 
+    // Случай 2 - Лист
     if (isTerminateNode(node))
     {
         bsptree_node_term* termNode = asTermNode(node);
         size_t eraseIndex = lowerIndexInTermNode(termNode, key);
+
         if (eraseIndex >= termNode->_data.size() || !keysEqual(termNode->_data[eraseIndex].first, key))
         {
             return { false, false };
         }
+
         termNode->_data.erase(termNode->_data.begin() + static_cast<std::ptrdiff_t>(eraseIndex));
         return { true, nodeUnderflowed(termNode) };
     }
 
+    // Случай 3 - Узел
     bsptree_node_middle* middleNode = asMiddleNode(node);
     size_t childIndex = childIndexInMiddleNode(middleNode, key);
     erase_result childResult = eraseFromSubtree(middleNode->_pointers[childIndex], key);
+
     if (!childResult.removed)
     {
         return { false, false };
@@ -1162,7 +1284,9 @@ typename BSP_tree<tkey, tvalue, compare, t>::erase_result BSP_tree<tkey, tvalue,
     {
         fixChildUnderflow(middleNode, childIndex);
     }
+
     rebuildOneSeparator(middleNode);
+    
     return { true, nodeUnderflowed(middleNode) };
 }
 
