@@ -92,7 +92,6 @@ private:
     size_t childIndexInMiddleNode(const bptree_node_middle* node, const tkey& key) const;
 
     const tkey& firstKeyInSubtree(const bptree_node_base* node) const;
-    void rebuildSeparators(bptree_node_base* node);
 
     struct splitResult
     {
@@ -554,30 +553,6 @@ const tkey& BP_tree<tkey, tvalue, compare, t>::firstKeyInSubtree(const bptree_no
     return firstKeyInSubtree(asMiddleNode(node)->_pointers.front());
 }
 
-// Пересборка всех сепараторов
-template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
-void BP_tree<tkey, tvalue, compare, t>::rebuildSeparators(bptree_node_base* node)
-{
-    if (node == nullptr || isTerminateNode(node))
-    {
-        return;
-    }
-
-    bptree_node_middle* middleNode = asMiddleNode(node);
-
-    for (bptree_node_base* child : middleNode->_pointers)
-    {
-        rebuildSeparators(child);
-    }
-
-    // Каждый ребёнок даёт разделитель (минимальный ключ)
-    middleNode->_keys.clear();
-    for (size_t index = 1; index < middleNode->_pointers.size(); ++index)
-    {
-        middleNode->_keys.push_back(firstKeyInSubtree(middleNode->_pointers[index]));
-    }
-}
-
 // [!] Рекурсивное добавление узла
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
 std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t> BP_tree<tkey, tvalue, compare, t>::insertIntoSubtree(bptree_node_base* node, const tree_data_type& data, bool& inserted, splitResult& splitRes)
@@ -681,8 +656,6 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_node_term*, size_t>
     splitRes = { true, promotedKey, rightNode };
     return iteratorState;
 }
-
-// NEW функции для удаления:
 
 // Перестройка сепаратора только у одного узла
 template<typename tkey, typename tvalue, comparator<tkey> compare, std::size_t t>
@@ -1473,9 +1446,9 @@ std::pair<typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator, bool> BP_
         newRoot->_keys.push_back(splitRes.separator);
         newRoot->_pointers.push_back(splitRes.rightNode);
         _root = newRoot;
+        rebuildOneSeparator(newRoot);
     }
 
-    rebuildSeparators(_root);
     ++_size;
     return { bptree_iterator(iteratorState.first, iteratorState.second), true };
 }
@@ -1645,7 +1618,7 @@ typename BP_tree<tkey, tvalue, compare, t>::bptree_iterator BP_tree<tkey, tvalue
 // cmake --build build
 // ./build/associative_container/indexing_tree/b_plus_tree/tests/sys_prog_assctv_cntnr_indxng_tr_b_pls_tr_tests
 
-// Ожидаю провал тестов.
+// Ожидаю провал тестов (5).
 
 // По условию имеем:
 // 1. minimum_keys_in_node = t - 1; <- у листьев элементов минимум t-1.
